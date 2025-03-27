@@ -12,15 +12,16 @@ export const FeatureSpreadBlock: React.FC<FeatureSpreadBlockProps> = ({
   features,
 }) => {
   return (
-    <div style={{ backgroundColor: 'var(--foreground)' }}>
+    <div className="py-16 secondary-background">
       <div className="flex flex-col items-center justify-center">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="heading-2" style={{ color: 'var(--foreground)' }}>
+          <h2 className="heading-2 " style={{ color: 'var(--text-secondary)' }}>
             {heading}
           </h2>
           {subheading && (
             <RichText
               className="body-large opacity-80 max-w-3xl mx-auto"
+              style={{ color: 'var(--text-secondary)' }}
               data={subheading}
               enableGutter={false}
             />
@@ -40,13 +41,17 @@ export const FeatureSpreadBlock: React.FC<FeatureSpreadBlockProps> = ({
                     </span>
                     <h3
                       className="heading-4 text-lg md:text-xl lg:text-2xl font-bold"
-                      style={{ color: 'var(--foreground)' }}
+                      style={{ color: 'var(--text-secondary)' }}
                     >
                       {feature.title}
                     </h3>
                   </div>
                   {feature.description && (
-                    <RichText data={feature.description} enableGutter={false} />
+                    <RichText
+                      data={feature.description}
+                      enableGutter={false}
+                      style={{ color: 'var(--text-primary)' }}
+                    />
                   )}
                   {feature.image && typeof feature.image === 'object' && (
                     <Media

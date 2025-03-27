@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { ChevronDown, ChevronLeft } from 'lucide-react'
+import { ChevronLeft } from 'lucide-react'
 import { cn } from '@/utilities/ui'
 
 import type { FaqBlock as FaqBlockProps } from '@/payload-types'
@@ -16,13 +16,13 @@ export const FaqBlock: React.FC<FaqBlockProps> = ({ heading, subheading, faqs })
   }
 
   return (
-    <div style={{ backgroundColor: 'var(--background)' }}>
+    <div className="py-16 background-primary">
       <div className="flex flex-col items-center justify-center">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="heading-2">{heading}</h2>
+          <h2 className="text-primary heading-2">{heading}</h2>
           {subheading && (
             <RichText
-              className="body-large opacity-80 max-w-3xl mx-auto"
+              className="body-large opacity-80 max-w-3xl mx-auto text-primary"
               data={subheading}
               enableGutter={false}
             />
@@ -38,9 +38,7 @@ export const FaqBlock: React.FC<FaqBlockProps> = ({ heading, subheading, faqs })
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}
                 >
-                  <h3 className="heading-4" style={{ color: 'var(--foreground)' }}>
-                    {faq.question}
-                  </h3>
+                  <h3 className="heading-4 text-primary">{faq.question}</h3>
                   <ChevronLeft
                     className={cn(
                       'h-5 w-5 transition-transform duration-200',

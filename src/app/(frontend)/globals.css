@@ -3,22 +3,16 @@
 @tailwind utilities;
 
 @layer base {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: unset;
-    font-weight: unset;
-  }
-
   :root {
-    --background: hsl(0 0% 100%);
-    --foreground: hsl(0 0% 3.9%);
+    --background-primary: hsl(0 0% 98%);
+    --background-secondary: hsl(0 0% 3.9%);
+    --background-primary-accent: hsl(0 0% 80%);
+    --background-secondary-accent: hsl(0 0% 20%);
 
     --text-primary: hsl(0 0% 3.9%);
-    --text-secondary: hsl(0 0% 63.9%);
+    --text-secondary: hsl(0 0% 98%);
+    --text-primary-accent: hsl(0 0% 20%);
+    --text-secondary-accent: hsl(0 0% 80%);
 
     --card: hsl(0 0% 100%);
     --card-foreground: hsl(0 0% 3.9%);
@@ -71,11 +65,15 @@
   }
 
   [data-theme='dark'] {
-    --background: hsl(0 0% 3.9%);
-    --foreground: hsl(0 0% 98%);
+    --background-primary: hsl(0 0% 3.9%);
+    --background-secondary: hsl(0 0% 98%);
+    --background-primary-accent: hsl(0 0% 20%);
+    --background-secondary-accent: hsl(0 0% 80%);
 
     --text-primary: hsl(0 0% 98%);
-    --text-secondary: hsl(0 0% 63.9%);
+    --text-secondary: hsl(0 0% 3.9%);
+    --text-primary-accent: hsl(0 0% 80%);
+    --text-secondary-accent: hsl(0 0% 20%);
 
     --card: hsl(0 0% 3.9%);
     --card-foreground: hsl(0 0% 98%);
@@ -106,6 +104,38 @@
     --warning: hsl(34 51% 25%);
     --error: hsl(10 39% 43%);
   }
+}
+
+.background-primary {
+  background-color: var(--background-primary);
+}
+
+.background-secondary {
+  background-color: var(--background-secondary);
+}
+
+.background-primary-accent {
+  background-color: var(--background-primary-accent);
+}
+
+.background-secondary-accent {
+  background-color: var(--background-secondary-accent);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-primary-accent {
+  color: var(--text-primary-accent);
+}
+
+.text-secondary-accent {
+  color: var(--text-secondary-accent);
 }
 
 @layer base {
@@ -450,116 +480,6 @@ html[data-theme='light'] {
     opacity: var(--max-opacity, 0.8);
     filter: blur(18px);
   }
-}
-
-/* Services Bubble Cloud Styles */
-.services-bubble-cloud {
-  position: relative;
-  min-height: 800px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-/* Dynamic service bubble styles */
-.service-bubble {
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  position: absolute;
-  transform-origin: center;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-}
-
-.service-bubble:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.4);
-  z-index: 10;
-}
-
-/* Responsive adjustments for bubble cloud */
-@media (max-width: 1280px) {
-  .services-bubble-cloud {
-    min-height: 900px;
-  }
-
-  .service-bubble {
-    max-width: 320px;
-    max-height: 320px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .services-bubble-cloud {
-    min-height: 800px;
-  }
-
-  .service-bubble {
-    max-width: 280px;
-    max-height: 280px;
-  }
-}
-
-@media (max-width: 768px) {
-  .services-bubble-cloud {
-    min-height: 700px;
-  }
-
-  .service-bubble {
-    max-width: 260px;
-    max-height: 260px;
-  }
-
-  /* Adjust positions for mobile */
-  .service-bubble.absolute {
-    position: relative !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-    margin: 1.5rem auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .service-bubble {
-    min-width: 220px;
-    min-height: 220px;
-    max-width: 240px;
-    max-height: 240px;
-  }
-}
-
-/* Floating animation for bubbles */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.float-animation {
-  animation: float 6s ease-in-out infinite;
-}
-
-.float-animation-delay-1 {
-  animation-delay: 1s;
-}
-
-.float-animation-delay-2 {
-  animation-delay: 2s;
-}
-
-.float-animation-delay-3 {
-  animation-delay: 3s;
 }
 
 /* Line clamp for text */
