@@ -17,6 +17,9 @@
     --background: hsl(0 0% 100%);
     --foreground: hsl(0 0% 3.9%);
 
+    --text-primary: hsl(0 0% 3.9%);
+    --text-secondary: hsl(0 0% 63.9%);
+
     --card: hsl(0 0% 100%);
     --card-foreground: hsl(0 0% 3.9%);
 
@@ -70,6 +73,9 @@
   [data-theme='dark'] {
     --background: hsl(0 0% 3.9%);
     --foreground: hsl(0 0% 98%);
+
+    --text-primary: hsl(0 0% 98%);
+    --text-secondary: hsl(0 0% 63.9%);
 
     --card: hsl(0 0% 3.9%);
     --card-foreground: hsl(0 0% 98%);
