@@ -141,7 +141,7 @@ html[data-theme='light'] {
   opacity: initial;
 }
 
-/* Testing Styles */
+/* Testing Styles rename to TESTING-CLASS */
 
 .dummy-section {
   border: 5px solid red;
