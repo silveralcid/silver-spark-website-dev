@@ -766,6 +766,12 @@ export interface FaqBlock {
     };
     [k: string]: unknown;
   } | null;
+  styledWords?:
+    | {
+        word?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   faqs?:
     | {
         question?: string | null;
@@ -812,6 +818,12 @@ export interface FeatureSpreadBlock {
     };
     [k: string]: unknown;
   } | null;
+  styledWords?:
+    | {
+        word?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   features?:
     | {
         title?: string | null;
@@ -900,6 +912,12 @@ export interface OurServicesBlock {
     };
     [k: string]: unknown;
   } | null;
+  styledWords?:
+    | {
+        word?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   serviceCards?:
     | {
         serviceTitle?: string | null;
@@ -956,6 +974,12 @@ export interface TestimonialSliderBlock {
     };
     [k: string]: unknown;
   } | null;
+  styledWords?:
+    | {
+        word?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   testimonialCards?:
     | {
         image?: (number | null) | Media;
@@ -994,6 +1018,12 @@ export interface OurTechBlock {
     };
     [k: string]: unknown;
   } | null;
+  styledWords?:
+    | {
+        word?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   categoryType?: string | null;
   categoryCards?:
     | {
@@ -1050,6 +1080,12 @@ export interface OurProcessBlock {
     };
     [k: string]: unknown;
   } | null;
+  styledWords?:
+    | {
+        word?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   stepType?: string | null;
   processSteps?:
     | {
@@ -1103,6 +1139,12 @@ export interface PricingMilestoneBlock {
     };
     [k: string]: unknown;
   } | null;
+  styledWords?:
+    | {
+        word?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   inactiveButtonText?: string | null;
   activeButtonText1?: string | null;
   activeButtonLink1?: string | null;
@@ -1197,6 +1239,12 @@ export interface StepsGuideDetailedBlock {
   } | null;
   TextColumn1?: string | null;
   TextColumn2?: string | null;
+  styledWords?:
+    | {
+        word?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   steps?:
     | {
         stepTitle?: string | null;
@@ -1265,6 +1313,12 @@ export interface TripleCardComboBlock {
           [k: string]: unknown;
         } | null;
         sectionTitle?: string | null;
+        styledWords?:
+          | {
+              word?: string | null;
+              id?: string | null;
+            }[]
+          | null;
         keyPoints?:
           | {
               item?: string | null;
@@ -1320,6 +1374,12 @@ export interface CtaBannerBlock {
   image?: (number | null) | Media;
   calloutText1?: string | null;
   calloutText2?: string | null;
+  styledWords?:
+    | {
+        word?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'ctaBanner';
@@ -1348,6 +1408,12 @@ export interface CaseStudiesBlock {
   ctaButtonText?: string | null;
   ctaButtonLink?: string | null;
   viewButtonText?: string | null;
+  styledWords?:
+    | {
+        word?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   caseCards?:
     | {
         companyName?: string | null;
@@ -1805,6 +1871,12 @@ export interface FormBlockSelect<T extends boolean = true> {
 export interface FaqBlockSelect<T extends boolean = true> {
   heading?: T;
   subheading?: T;
+  styledWords?:
+    | T
+    | {
+        word?: T;
+        id?: T;
+      };
   faqs?:
     | T
     | {
@@ -1822,6 +1894,12 @@ export interface FaqBlockSelect<T extends boolean = true> {
 export interface FeatureSpreadBlockSelect<T extends boolean = true> {
   heading?: T;
   subheading?: T;
+  styledWords?:
+    | T
+    | {
+        word?: T;
+        id?: T;
+      };
   features?:
     | T
     | {
@@ -1866,6 +1944,12 @@ export interface AboutUsBlockSelect<T extends boolean = true> {
 export interface OurServicesBlockSelect<T extends boolean = true> {
   heading?: T;
   subheading?: T;
+  styledWords?:
+    | T
+    | {
+        word?: T;
+        id?: T;
+      };
   serviceCards?:
     | T
     | {
@@ -1893,6 +1977,12 @@ export interface OurServicesBlockSelect<T extends boolean = true> {
 export interface TestimonialSliderBlockSelect<T extends boolean = true> {
   heading?: T;
   subheading?: T;
+  styledWords?:
+    | T
+    | {
+        word?: T;
+        id?: T;
+      };
   testimonialCards?:
     | T
     | {
@@ -1916,6 +2006,12 @@ export interface TestimonialSliderBlockSelect<T extends boolean = true> {
 export interface OurTechBlockSelect<T extends boolean = true> {
   heading?: T;
   subheading?: T;
+  styledWords?:
+    | T
+    | {
+        word?: T;
+        id?: T;
+      };
   categoryType?: T;
   categoryCards?:
     | T
@@ -1943,6 +2039,12 @@ export interface OurTechBlockSelect<T extends boolean = true> {
 export interface OurProcessBlockSelect<T extends boolean = true> {
   heading?: T;
   subheading?: T;
+  styledWords?:
+    | T
+    | {
+        word?: T;
+        id?: T;
+      };
   stepType?: T;
   processSteps?:
     | T
@@ -1967,6 +2069,12 @@ export interface OurProcessBlockSelect<T extends boolean = true> {
 export interface PricingMilestoneBlockSelect<T extends boolean = true> {
   heading?: T;
   subheading?: T;
+  styledWords?:
+    | T
+    | {
+        word?: T;
+        id?: T;
+      };
   inactiveButtonText?: T;
   activeButtonText1?: T;
   activeButtonLink1?: T;
@@ -2004,6 +2112,12 @@ export interface StepsGuideDetailedBlockSelect<T extends boolean = true> {
   subheading?: T;
   TextColumn1?: T;
   TextColumn2?: T;
+  styledWords?:
+    | T
+    | {
+        word?: T;
+        id?: T;
+      };
   steps?:
     | T
     | {
@@ -2030,6 +2144,12 @@ export interface TripleCardComboBlockSelect<T extends boolean = true> {
         title?: T;
         description?: T;
         sectionTitle?: T;
+        styledWords?:
+          | T
+          | {
+              word?: T;
+              id?: T;
+            };
         keyPoints?:
           | T
           | {
@@ -2055,6 +2175,12 @@ export interface CtaBannerBlockSelect<T extends boolean = true> {
   image?: T;
   calloutText1?: T;
   calloutText2?: T;
+  styledWords?:
+    | T
+    | {
+        word?: T;
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }
@@ -2068,6 +2194,12 @@ export interface CaseStudiesBlockSelect<T extends boolean = true> {
   ctaButtonText?: T;
   ctaButtonLink?: T;
   viewButtonText?: T;
+  styledWords?:
+    | T
+    | {
+        word?: T;
+        id?: T;
+      };
   caseCards?:
     | T
     | {
