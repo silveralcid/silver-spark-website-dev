@@ -27,6 +27,7 @@ const blockComponents = {
   aboutUs: AboutUsBlock,
   ourServices: OurServicesBlock,
   testimonialSlider: TestimonialSliderBlock,
+  ourTech: OurTechBlock,
 }
 
 export const RenderBlocks: React.FC<{

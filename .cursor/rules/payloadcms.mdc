@@ -1,0 +1,64 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Schema to Component Implmentation Patterns
+
+## Common Imports  
+
+```tsx
+'use client';
+import RichText from '@/components/RichText';
+import Link from 'next/link';
+import Image from 'next/image';
+import type { blockname as blocknameProps } from '@/payload-types';
+```
+
+## Props Pattern  
+
+```tsx
+export const Blockname: React.FC<blocknameProps> = ({ dataName, anotherDataName, ...props }) => {
+  // Component logic here
+};
+```
+
+## Data Type Implementation Patterns  
+
+### Upload/Media/Image  
+
+```tsx
+{image && typeof image === 'object' && image.url && (
+  <Image
+    src={image.url}
+    alt={image.alt || 'Image description'}
+    width={400}
+    height={300}
+    priority
+  />
+)}
+```
+
+### Rich Text  
+
+```tsx
+{richTextDataName && (
+  <RichText
+    className="body-large opacity-80 max-w-3xl mx-auto text-primary"
+    data={richTextDataName}
+    enableGutter={false}
+  />
+)}
+```
+
+### Links/Buttons  
+
+```tsx
+<Link
+  href={block.cta_button.url}
+  style={{ textDecoration: 'none' }}
+>
+  {block.cta_button.label}
+</Link>
+```  
