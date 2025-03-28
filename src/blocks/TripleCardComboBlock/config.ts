@@ -34,6 +34,16 @@ export const TripleCardComboBlock: Block = {
           type: 'text',
         },
         {
+          name: 'styledWords',
+          type: 'array',
+          fields: [
+            {
+              name: 'word',
+              type: 'text',
+            },
+          ],
+        },
+        {
           name: 'keyPoints',
           type: 'array',
           fields: [

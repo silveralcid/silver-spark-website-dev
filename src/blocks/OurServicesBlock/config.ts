@@ -13,6 +13,16 @@ export const OurServicesBlock: Block = {
       type: 'richText',
     },
     {
+      name: 'styledWords',
+      type: 'array',
+      fields: [
+        {
+          name: 'word',
+          type: 'text',
+        },
+      ],
+    },
+    {
       name: 'serviceCards',
       type: 'array',
       fields: [

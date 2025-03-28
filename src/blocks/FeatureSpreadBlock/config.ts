@@ -13,6 +13,16 @@ export const FeatureSpreadBlock: Block = {
       type: 'richText',
     },
     {
+      name: 'styledWords',
+      type: 'array',
+      fields: [
+        {
+          name: 'word',
+          type: 'text',
+        },
+      ],
+    },
+    {
       name: 'features',
       type: 'array',
       fields: [

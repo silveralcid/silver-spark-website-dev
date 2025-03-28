@@ -13,6 +13,16 @@ export const TestimonialSliderBlock: Block = {
       type: 'richText',
     },
     {
+      name: 'styledWords',
+      type: 'array',
+      fields: [
+        {
+          name: 'word',
+          type: 'text',
+        },
+      ],
+    },
+    {
       name: 'testimonialCards',
       type: 'array',
       fields: [

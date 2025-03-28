@@ -13,6 +13,16 @@ export const PricingMilestoneBlock: Block = {
       type: 'richText',
     },
     {
+      name: 'styledWords',
+      type: 'array',
+      fields: [
+        {
+          name: 'word',
+          type: 'text',
+        },
+      ],
+    },
+    {
       name: 'inactiveButtonText',
       type: 'text',
     },

@@ -13,6 +13,16 @@ export const OurProcessBlock: Block = {
       type: 'richText',
     },
     {
+      name: 'styledWords',
+      type: 'array',
+      fields: [
+        {
+          name: 'word',
+          type: 'text',
+        },
+      ],
+    },
+    {
       name: 'stepType',
       type: 'text',
     },

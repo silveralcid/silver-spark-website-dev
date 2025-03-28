@@ -33,5 +33,15 @@ export const CtaBannerBlock: Block = {
     },
     { name: 'calloutText1', type: 'text' },
     { name: 'calloutText2', type: 'text' },
+    {
+      name: 'styledWords',
+      type: 'array',
+      fields: [
+        {
+          name: 'word',
+          type: 'text',
+        },
+      ],
+    },
   ],
 }

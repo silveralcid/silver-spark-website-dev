@@ -25,6 +25,16 @@ export const CaseStudiesBlock: Block = {
       type: 'text',
     },
     {
+      name: 'styledWords',
+      type: 'array',
+      fields: [
+        {
+          name: 'word',
+          type: 'text',
+        },
+      ],
+    },
+    {
       name: 'caseCards',
       type: 'array',
       fields: [
