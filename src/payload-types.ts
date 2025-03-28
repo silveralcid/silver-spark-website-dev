@@ -191,7 +191,23 @@ export interface Page {
       | null;
     media?: (number | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | FaqBlock | FeatureSpreadBlock)[];
+  layout: (
+    | CallToActionBlock
+    | ContentBlock
+    | MediaBlock
+    | ArchiveBlock
+    | FormBlock
+    | FaqBlock
+    | FeatureSpreadBlock
+    | AboutUsBlock
+    | CaseStudiesBlock
+    | OurProcessBlock
+    | OurServicesBlock
+    | OurTechBlock
+    | PricingMilestoneBlock
+    | StepsGuideDetailedBlock
+    | TripleCardComboBlock
+  )[];
   meta?: {
     title?: string | null;
     /**
@@ -822,6 +838,609 @@ export interface FeatureSpreadBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "AboutUsBlock".
+ */
+export interface AboutUsBlock {
+  heading?: string | null;
+  subheading?: string | null;
+  image?: (number | null) | Media;
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  ctaButtonText?: string | null;
+  ctaButtonLink?: string | null;
+  solutionHighlights?:
+    | {
+        solutionHighlight?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'aboutUs';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CaseStudiesBlock".
+ */
+export interface CaseStudiesBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  ctaText?: string | null;
+  ctaLink?: string | null;
+  caseCards?:
+    | {
+        compName?: string | null;
+        compInd?: string | null;
+        compLogo?: (number | null) | Media;
+        viewText?: string | null;
+        viewLink?: string | null;
+        ovTitle?: string | null;
+        ovDesc?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        sampImg?: (number | null) | Media;
+        ovResults?:
+          | {
+              ovResNum?: string | null;
+              ovResInfo?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        ovSolText?: string | null;
+        ovSols?:
+          | {
+              ovSol?: string | null;
+              ovSolInfo?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        ovPainText?: string | null;
+        ovPains?:
+          | {
+              ovPain?: string | null;
+              ovPainInfo?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  chalTitle?: string | null;
+  chalDesc?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  chalCards?:
+    | {
+        chalCardTitle?: string | null;
+        chalCardPts?:
+          | {
+              chalCardPt?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  solTitle?: string | null;
+  solDesc?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  solCards?:
+    | {
+        solCardTitle?: string | null;
+        solCardDesc?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  resTitle?: string | null;
+  resDesc?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  resCards?:
+    | {
+        resNum?: string | null;
+        resTitle?: string | null;
+        resDesc?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+      }[]
+    | null;
+  resKeyPts?:
+    | {
+        resKeyPt?: string | null;
+        resKeyPtDesc?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'caseStudiesBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OurProcessBlock".
+ */
+export interface OurProcessBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  stepType?: string | null;
+  processSteps?:
+    | {
+        stepTitle?: string | null;
+        stepDescription?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        processItems?:
+          | {
+              processItem?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'ourProcess';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OurServicesBlock".
+ */
+export interface OurServicesBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  serviceCards?:
+    | {
+        serviceTitle?: string | null;
+        serviceDescription?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        serviceIcon?: string | null;
+        servicePointName?: string | null;
+        servicePoints?:
+          | {
+              servicePoint?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaButtonText?: string | null;
+  ctaButtonLink?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'ourServices';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OurTechBlock".
+ */
+export interface OurTechBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  categoryType?: string | null;
+  categoryCards?:
+    | {
+        cardTitle?: string | null;
+        cardDescription?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        chipSectionName?: string | null;
+        cardChips?:
+          | {
+              cardItem?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaButtonText?: string | null;
+  ctaButtonLink?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'ourTech';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PricingMilestoneBlock".
+ */
+export interface PricingMilestoneBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  packagePricing?:
+    | {
+        icon?: string | null;
+        packageName?: string | null;
+        packagePrice?: string | null;
+        packageDescription?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        inactiveButtonText?: string | null;
+        activeButtonText1?: string | null;
+        activeButtonLink1?: string | null;
+        activeButtonText2?: string | null;
+        activeButtonLink2?: string | null;
+        packageHighlight?: boolean | null;
+        packageHighlightText?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  milestoneSectionTitle?: string | null;
+  milestoneSectionDescription?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  milestones?:
+    | {
+        milestoneTitle?: string | null;
+        milestoneDescription?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        milestonePrice?: string | null;
+        milestonePercentage?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'pricingMilestone';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StepsGuideDetailedBlock".
+ */
+export interface StepsGuideDetailedBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  TextColumn1?: string | null;
+  TextColumn2?: string | null;
+  steps?:
+    | {
+        stepNumber?: string | null;
+        stepTitle?: string | null;
+        stepDescription?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaText?: string | null;
+  ctaLink?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'stepsGuideDetailed';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TripleCardComboBlock".
+ */
+export interface TripleCardComboBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  cards?:
+    | {
+        icon?: string | null;
+        title?: string | null;
+        description?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        sectionTitle?: string | null;
+        keyPoints?:
+          | {
+              item?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        bannerTitle?: string | null;
+        bannerDescription?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        specialText?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'tripleCardCombo';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1112,6 +1731,14 @@ export interface PagesSelect<T extends boolean = true> {
         formBlock?: T | FormBlockSelect<T>;
         faq?: T | FaqBlockSelect<T>;
         featureSpread?: T | FeatureSpreadBlockSelect<T>;
+        aboutUs?: T | AboutUsBlockSelect<T>;
+        caseStudiesBlock?: T | CaseStudiesBlockSelect<T>;
+        ourProcess?: T | OurProcessBlockSelect<T>;
+        ourServices?: T | OurServicesBlockSelect<T>;
+        ourTech?: T | OurTechBlockSelect<T>;
+        pricingMilestone?: T | PricingMilestoneBlockSelect<T>;
+        stepsGuideDetailed?: T | StepsGuideDetailedBlockSelect<T>;
+        tripleCardCombo?: T | TripleCardComboBlockSelect<T>;
       };
   meta?:
     | T
@@ -1241,6 +1868,279 @@ export interface FeatureSpreadBlockSelect<T extends boolean = true> {
         title?: T;
         description?: T;
         image?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "AboutUsBlock_select".
+ */
+export interface AboutUsBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  image?: T;
+  content?: T;
+  ctaButtonText?: T;
+  ctaButtonLink?: T;
+  solutionHighlights?:
+    | T
+    | {
+        solutionHighlight?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CaseStudiesBlock_select".
+ */
+export interface CaseStudiesBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  ctaText?: T;
+  ctaLink?: T;
+  caseCards?:
+    | T
+    | {
+        compName?: T;
+        compInd?: T;
+        compLogo?: T;
+        viewText?: T;
+        viewLink?: T;
+        ovTitle?: T;
+        ovDesc?: T;
+        sampImg?: T;
+        ovResults?:
+          | T
+          | {
+              ovResNum?: T;
+              ovResInfo?: T;
+              id?: T;
+            };
+        ovSolText?: T;
+        ovSols?:
+          | T
+          | {
+              ovSol?: T;
+              ovSolInfo?: T;
+              id?: T;
+            };
+        ovPainText?: T;
+        ovPains?:
+          | T
+          | {
+              ovPain?: T;
+              ovPainInfo?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  chalTitle?: T;
+  chalDesc?: T;
+  chalCards?:
+    | T
+    | {
+        chalCardTitle?: T;
+        chalCardPts?:
+          | T
+          | {
+              chalCardPt?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  solTitle?: T;
+  solDesc?: T;
+  solCards?:
+    | T
+    | {
+        solCardTitle?: T;
+        solCardDesc?: T;
+        id?: T;
+      };
+  resTitle?: T;
+  resDesc?: T;
+  resCards?:
+    | T
+    | {
+        resNum?: T;
+        resTitle?: T;
+        resDesc?: T;
+        id?: T;
+      };
+  resKeyPts?:
+    | T
+    | {
+        resKeyPt?: T;
+        resKeyPtDesc?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OurProcessBlock_select".
+ */
+export interface OurProcessBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  stepType?: T;
+  processSteps?:
+    | T
+    | {
+        stepTitle?: T;
+        stepDescription?: T;
+        processItems?:
+          | T
+          | {
+              processItem?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OurServicesBlock_select".
+ */
+export interface OurServicesBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  serviceCards?:
+    | T
+    | {
+        serviceTitle?: T;
+        serviceDescription?: T;
+        serviceIcon?: T;
+        servicePointName?: T;
+        servicePoints?:
+          | T
+          | {
+              servicePoint?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  ctaButtonText?: T;
+  ctaButtonLink?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OurTechBlock_select".
+ */
+export interface OurTechBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  categoryType?: T;
+  categoryCards?:
+    | T
+    | {
+        cardTitle?: T;
+        cardDescription?: T;
+        chipSectionName?: T;
+        cardChips?:
+          | T
+          | {
+              cardItem?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  ctaButtonText?: T;
+  ctaButtonLink?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PricingMilestoneBlock_select".
+ */
+export interface PricingMilestoneBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  packagePricing?:
+    | T
+    | {
+        icon?: T;
+        packageName?: T;
+        packagePrice?: T;
+        packageDescription?: T;
+        inactiveButtonText?: T;
+        activeButtonText1?: T;
+        activeButtonLink1?: T;
+        activeButtonText2?: T;
+        activeButtonLink2?: T;
+        packageHighlight?: T;
+        packageHighlightText?: T;
+        id?: T;
+      };
+  milestoneSectionTitle?: T;
+  milestoneSectionDescription?: T;
+  milestones?:
+    | T
+    | {
+        milestoneTitle?: T;
+        milestoneDescription?: T;
+        milestonePrice?: T;
+        milestonePercentage?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StepsGuideDetailedBlock_select".
+ */
+export interface StepsGuideDetailedBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  TextColumn1?: T;
+  TextColumn2?: T;
+  steps?:
+    | T
+    | {
+        stepNumber?: T;
+        stepTitle?: T;
+        stepDescription?: T;
+        id?: T;
+      };
+  ctaText?: T;
+  ctaLink?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TripleCardComboBlock_select".
+ */
+export interface TripleCardComboBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  cards?:
+    | T
+    | {
+        icon?: T;
+        title?: T;
+        description?: T;
+        sectionTitle?: T;
+        keyPoints?:
+          | T
+          | {
+              item?: T;
+              id?: T;
+            };
+        bannerTitle?: T;
+        bannerDescription?: T;
+        specialText?: T;
         id?: T;
       };
   id?: T;
