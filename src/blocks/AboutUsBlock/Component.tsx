@@ -38,7 +38,7 @@ export const AboutUsBlock: React.FC<AboutUsBlockProps> = ({
           {ctaButtonText}
         </a>
       )}
-      <ul className="solution-highlights">
+      <ul className="dummy-container">
         {solutionHighlights &&
           solutionHighlights.map((highlight, index) => (
             <li key={index} className="dummy-text-body">

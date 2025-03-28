@@ -15,18 +15,18 @@ export const OurServicesBlock: React.FC<OurServicesBlockProps> = ({
 }) => {
   return (
     <div className="dummy-section">
-      {heading && <h2 className="mb-4">{heading}</h2>}
+      {heading && <h2 className="dummy-text-heading mb-4">{heading}</h2>}
       {subheading && (
         <RichText
-          className="body-large opacity-80 max-w-3xl mx-auto text-primary"
+          className="dummy-text-body body-large opacity-80 max-w-3xl mx-auto text-primary"
           data={subheading}
           enableGutter={false}
         />
       )}
-      <div className="service-cards flex justify-center">
+      <div className="dummy-container flex justify-center">
         {serviceCards &&
           serviceCards.map((card, index) => (
-            <div key={index} className="service-card mx-4">
+            <div key={index} className="dummy-container mx-4">
               {card.serviceIcon && typeof card.serviceIcon === 'object' && card.serviceIcon.url && (
                 <Image
                   src={card.serviceIcon.url}
@@ -35,17 +35,21 @@ export const OurServicesBlock: React.FC<OurServicesBlockProps> = ({
                   height={100}
                 />
               )}
-              {card.serviceTitle && <h3 className="mt-2">{card.serviceTitle}</h3>}
+              {card.serviceTitle && (
+                <h3 className="dummy-text-subheading mt-2">{card.serviceTitle}</h3>
+              )}
               {card.serviceDescription && (
                 <RichText
-                  className="body-small"
+                  className="dummy-text-body body-small"
                   data={card.serviceDescription}
                   enableGutter={false}
                 />
               )}
               {card.servicePoints &&
                 card.servicePoints.map((point, pointIndex) => (
-                  <p key={pointIndex}>{point.servicePoint}</p>
+                  <p key={pointIndex} className="dummy-text-body">
+                    {point.servicePoint}
+                  </p>
                 ))}
             </div>
           ))}
@@ -53,7 +57,7 @@ export const OurServicesBlock: React.FC<OurServicesBlockProps> = ({
       {ctaButtonText && ctaButtonLink && (
         <Link
           href={ctaButtonLink}
-          className="mt-4 inline-block"
+          className="dummy-button mt-4 inline-block"
           style={{
             textDecoration: 'none',
           }}

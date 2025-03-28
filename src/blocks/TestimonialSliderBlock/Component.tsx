@@ -14,18 +14,18 @@ export const TestimonialSliderBlock: React.FC<TestimonialSliderBlockProps> = ({
 }) => {
   return (
     <div className="dummy-section">
-      {heading && <h2>{heading}</h2>}
+      {heading && <h2 className="dummy-text-heading">{heading}</h2>}
       {subheading && (
         <RichText
-          className="body-large opacity-80 max-w-3xl mx-auto text-primary"
+          className="dummy-text-body opacity-80 max-w-3xl mx-auto text-primary"
           data={subheading}
           enableGutter={false}
         />
       )}
-      <div className="testimonial-cards">
+      <div className="dummy-container">
         {testimonialCards &&
           testimonialCards.map((card, index) => (
-            <div key={index} className="testimonial-card">
+            <div key={index} className="dummy-container">
               {card.image && typeof card.image === 'object' && card.image.url && (
                 <Image
                   src={card.image.url}
@@ -35,19 +35,20 @@ export const TestimonialSliderBlock: React.FC<TestimonialSliderBlockProps> = ({
                   priority
                 />
               )}
-              <h3>
+              <h3 className="dummy-text-subheading">
                 {card.firstName} {card.lastName}
               </h3>
-              <p>
+              <p className="dummy-text-body">
                 {card.role} at {card.companyName}
               </p>
-              <p>{card.testimonialText}</p>
+              <p className="dummy-text-body">{card.testimonialText}</p>
             </div>
           ))}
       </div>
       {ctaButtonText && ctaButtonLink && (
         <Link
           href={ctaButtonLink}
+          className="dummy-button"
           style={{
             textDecoration: 'none',
           }}
