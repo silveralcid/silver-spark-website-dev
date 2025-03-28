@@ -18,6 +18,7 @@ import { OurTechBlock } from '@/blocks/OurTechBlock/Component'
 import { OurProcessBlock } from '@/blocks/OurProcessBlock/Component'
 import { PricingMilestoneBlock } from './PricingMilestoneBlock/Component'
 import { StepsGuideDetailed } from './StepsGuideDetailedBlock/Component'
+import { TripleCardComboBlock } from './TripleCardComboBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -34,6 +35,7 @@ const blockComponents = {
   ourProcess: OurProcessBlock,
   pricingMilestone: PricingMilestoneBlock,
   stepsGuideDetailed: StepsGuideDetailed,
+  tripleCardCombo: TripleCardComboBlock,
 }
 
 export const RenderBlocks: React.FC<{
