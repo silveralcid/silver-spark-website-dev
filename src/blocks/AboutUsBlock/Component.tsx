@@ -14,13 +14,21 @@ export const AboutUsBlock: React.FC<AboutUsBlockProps> = ({
   solutionHighlights,
   styledWords,
 }) => {
-  // Function to highlight styled words in red
+  // Function to highlight styled words with a gradient
   const highlightStyledWords = (text: string) => {
     if (!styledWords) return text
     let highlightedText = text
     styledWords.forEach(({ word }) => {
       const regex = new RegExp(`(${word})`, 'gi')
-      highlightedText = highlightedText.replace(regex, '<span style="color: red;">$1</span>')
+      highlightedText = highlightedText.replace(
+        regex,
+        `
+        <span style="
+          background: linear-gradient(90deg, rgba(255,0,150,1) 0%, rgba(0,204,255,1) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        ">$1</span>`,
+      )
     })
     return highlightedText
   }
