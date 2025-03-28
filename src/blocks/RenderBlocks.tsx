@@ -20,7 +20,7 @@ import { PricingMilestoneBlock } from '@/blocks/PricingMilestoneBlock/Component'
 import { StepsGuideDetailed } from '@/blocks/StepsGuideDetailedBlock/Component'
 import { TripleCardComboBlock } from '@/blocks/TripleCardComboBlock/Component'
 import { CtaBanner } from '@/blocks/CtaBannerBlock/Component'
-
+import { CaseStudiesBlock } from '@/blocks/CaseStudiesBlock/Component'
 const blockComponents = {
   archive: ArchiveBlock,
   content: ContentBlock,
@@ -38,6 +38,7 @@ const blockComponents = {
   stepsGuideDetailed: StepsGuideDetailed,
   tripleCardCombo: TripleCardComboBlock,
   ctaBanner: CtaBanner,
+  caseStudiesBlock: CaseStudiesBlock,
 }
 
 export const RenderBlocks: React.FC<{

@@ -37,6 +37,10 @@ export const CaseStudiesBlock: Block = {
           type: 'text',
         },
         {
+          name: 'mainText',
+          type: 'richText',
+        },
+        {
           name: 'companyLogo',
           type: 'upload',
           relationTo: 'media',

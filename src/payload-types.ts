@@ -1346,6 +1346,21 @@ export interface CaseStudiesBlock {
     | {
         companyName?: string | null;
         companyIndustry?: string | null;
+        mainText?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
         companyLogo?: (number | null) | Media;
         viewButtonLink?: string | null;
         image?: (number | null) | Media;
@@ -2046,6 +2061,7 @@ export interface CaseStudiesBlockSelect<T extends boolean = true> {
     | {
         companyName?: T;
         companyIndustry?: T;
+        mainText?: T;
         companyLogo?: T;
         viewButtonLink?: T;
         image?: T;
