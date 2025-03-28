@@ -200,6 +200,7 @@ export interface Page {
     | FaqBlock
     | FeatureSpreadBlock
     | AboutUsBlock
+    | OurServicesBlock
   )[];
   meta?: {
     title?: string | null;
@@ -866,6 +867,62 @@ export interface AboutUsBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OurServicesBlock".
+ */
+export interface OurServicesBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  serviceCards?:
+    | {
+        serviceTitle?: string | null;
+        serviceDescription?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        serviceIcon?: (number | null) | Media;
+        servicePointName?: string | null;
+        servicePoints?:
+          | {
+              servicePoint?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaButtonText?: string | null;
+  ctaButtonLink?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'ourServices';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1157,6 +1214,7 @@ export interface PagesSelect<T extends boolean = true> {
         faq?: T | FaqBlockSelect<T>;
         featureSpread?: T | FeatureSpreadBlockSelect<T>;
         aboutUs?: T | AboutUsBlockSelect<T>;
+        ourServices?: T | OurServicesBlockSelect<T>;
       };
   meta?:
     | T
@@ -1308,6 +1366,33 @@ export interface AboutUsBlockSelect<T extends boolean = true> {
         solutionHighlight?: T;
         id?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OurServicesBlock_select".
+ */
+export interface OurServicesBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  serviceCards?:
+    | T
+    | {
+        serviceTitle?: T;
+        serviceDescription?: T;
+        serviceIcon?: T;
+        servicePointName?: T;
+        servicePoints?:
+          | T
+          | {
+              servicePoint?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  ctaButtonText?: T;
+  ctaButtonLink?: T;
   id?: T;
   blockName?: T;
 }

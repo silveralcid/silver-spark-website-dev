@@ -26,7 +26,8 @@ export const OurServicesBlock: Block = {
         },
         {
           name: 'serviceIcon',
-          type: 'text',
+          type: 'upload',
+          relationTo: 'media',
         },
         {
           name: 'servicePointName',
