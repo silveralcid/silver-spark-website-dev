@@ -25,10 +25,6 @@ export const StepsGuideDetailedBlock: Block = {
       type: 'array',
       fields: [
         {
-          name: 'stepNumber',
-          type: 'text',
-        },
-        {
           name: 'stepTitle',
           type: 'text',
         },

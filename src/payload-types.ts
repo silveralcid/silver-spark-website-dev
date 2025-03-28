@@ -205,6 +205,7 @@ export interface Page {
     | OurTechBlock
     | OurProcessBlock
     | PricingMilestoneBlock
+    | StepsGuideDetailedBlock
   )[];
   meta?: {
     title?: string | null;
@@ -1166,6 +1167,56 @@ export interface PricingMilestoneBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StepsGuideDetailedBlock".
+ */
+export interface StepsGuideDetailedBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  TextColumn1?: string | null;
+  TextColumn2?: string | null;
+  steps?:
+    | {
+        stepTitle?: string | null;
+        stepDescription?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaText?: string | null;
+  ctaLink?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'stepsGuideDetailed';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1462,6 +1513,7 @@ export interface PagesSelect<T extends boolean = true> {
         ourTech?: T | OurTechBlockSelect<T>;
         ourProcess?: T | OurProcessBlockSelect<T>;
         pricingMilestone?: T | PricingMilestoneBlockSelect<T>;
+        stepsGuideDetailed?: T | StepsGuideDetailedBlockSelect<T>;
       };
   meta?:
     | T
@@ -1749,6 +1801,27 @@ export interface PricingMilestoneBlockSelect<T extends boolean = true> {
         milestoneDescription?: T;
         id?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StepsGuideDetailedBlock_select".
+ */
+export interface StepsGuideDetailedBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  TextColumn1?: T;
+  TextColumn2?: T;
+  steps?:
+    | T
+    | {
+        stepTitle?: T;
+        stepDescription?: T;
+        id?: T;
+      };
+  ctaText?: T;
+  ctaLink?: T;
   id?: T;
   blockName?: T;
 }
