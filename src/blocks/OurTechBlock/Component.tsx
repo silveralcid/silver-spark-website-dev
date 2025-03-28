@@ -13,7 +13,7 @@ export const OurTechBlock: React.FC<OurTechBlockProps> = ({
   ctaButtonLink,
 }) => {
   return (
-    <div className="our-tech-block">
+    <div className="dummy-section">
       {heading && <h2>{heading}</h2>}
       {subheading && <RichText className="subheading" data={subheading} enableGutter={false} />}
       {categoryType && <h3>{categoryType}</h3>}

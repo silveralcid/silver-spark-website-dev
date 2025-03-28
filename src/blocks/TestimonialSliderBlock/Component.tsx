@@ -13,7 +13,7 @@ export const TestimonialSliderBlock: React.FC<TestimonialSliderBlockProps> = ({
   ctaButtonLink,
 }) => {
   return (
-    <div className="testimonial-slider">
+    <div className="dummy-section">
       {heading && <h2>{heading}</h2>}
       {subheading && (
         <RichText

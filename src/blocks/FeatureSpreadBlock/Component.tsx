@@ -12,7 +12,7 @@ export const FeatureSpreadBlock: React.FC<FeatureSpreadBlockProps> = ({
   features,
 }) => {
   return (
-    <div className="py-16 secondary-background">
+    <div className="py-16 secondary-background dummy-section">
       <div className="flex flex-col items-center justify-center">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-2 " style={{ color: 'var(--text-secondary)' }}>

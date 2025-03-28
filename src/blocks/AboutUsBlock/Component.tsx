@@ -14,7 +14,7 @@ export const AboutUsBlock: React.FC<AboutUsBlockProps> = ({
   solutionHighlights,
 }) => {
   return (
-    <div className="about-us-block flex flex-col items-center justify-center">
+    <div className="dummy-section">
       <h1>{heading}</h1>
       <h2>{subheading}</h2>
       {image && typeof image === 'object' && image.url && (

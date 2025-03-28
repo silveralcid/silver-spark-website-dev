@@ -540,3 +540,12 @@ html[data-theme='light'] {
   opacity: 0.7;
   z-index: 0;
 }
+
+.dummy-section {
+  border: 5px solid red; /* Red border */
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  padding: 20px; /* Add padding for spacing */
+}

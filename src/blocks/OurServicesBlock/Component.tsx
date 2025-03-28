@@ -14,7 +14,7 @@ export const OurServicesBlock: React.FC<OurServicesBlockProps> = ({
   ctaButtonLink,
 }) => {
   return (
-    <div className="our-services-block text-center">
+    <div className="dummy-section">
       {heading && <h2 className="mb-4">{heading}</h2>}
       {subheading && (
         <RichText
