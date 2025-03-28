@@ -543,9 +543,38 @@ html[data-theme='light'] {
 
 .dummy-section {
   border: 5px solid red; /* Red border */
+  background-color: #f0f0f0; /* Light gray background */
   display: flex; /* Use flexbox for centering */
   flex-direction: column; /* Center items vertically */
   justify-content: center; /* Center items horizontally */
   align-items: center; /* Center items vertically */
   padding: 20px; /* Add padding for spacing */
+}
+
+.dummy-button {
+  border: 5px solid blue; /* Blue border */
+  padding: 10px 20px; /* Add padding for spacing */
+  border-radius: 5px; /* Add rounded corners */
+  background-color: #f0f0f0; /* Light gray background */
+  color: #333; /* Dark text color */
+}
+
+.dummy-text-heading {
+  color: black; /* Dark text color */
+  font-size: 2rem; /* Set font size */
+  font-weight: bold; /* Set font weight */
+  text-align: center; /* Center text */
+  margin-bottom: 20px; /* Add margin for spacing */
+}
+
+.dummy-text-subheading {
+  color: black; /* Dark text color */
+  font-size: 1.5rem; /* Set font size */
+  text-align: center; /* Center text */
+}
+
+.dummy-text-body {
+  color: black; /* Dark text color */
+  font-size: 1rem; /* Set font size */
+  text-align: center; /* Center text */
 }
