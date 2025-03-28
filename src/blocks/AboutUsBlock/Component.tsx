@@ -15,8 +15,8 @@ export const AboutUsBlock: React.FC<AboutUsBlockProps> = ({
 }) => {
   return (
     <div className="dummy-section">
-      <h1>{heading}</h1>
-      <h2>{subheading}</h2>
+      <h1 className="dummy-text-heading">{heading}</h1>
+      <h2 className="dummy-text-subheading">{subheading}</h2>
       {image && typeof image === 'object' && image.url && (
         <Image
           src={image.url}
@@ -28,20 +28,22 @@ export const AboutUsBlock: React.FC<AboutUsBlockProps> = ({
       )}
       {content && (
         <RichText
-          className="body-large opacity-80 max-w-3xl mx-auto text-primary"
+          className="dummy-text-body opacity-80 max-w-3xl mx-auto text-primary"
           data={content}
           enableGutter={false}
         />
       )}
       {ctaButtonText && ctaButtonLink && (
-        <a href={ctaButtonLink} className="cta-button">
+        <a href={ctaButtonLink} className="dummy-button">
           {ctaButtonText}
         </a>
       )}
       <ul className="solution-highlights">
         {solutionHighlights &&
           solutionHighlights.map((highlight, index) => (
-            <li key={index}>{highlight.solutionHighlight}</li>
+            <li key={index} className="dummy-text-body">
+              {highlight.solutionHighlight}
+            </li>
           ))}
       </ul>
     </div>

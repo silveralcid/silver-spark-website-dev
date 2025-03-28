@@ -578,3 +578,9 @@ html[data-theme='light'] {
   font-size: 1rem; /* Set font size */
   text-align: center; /* Center text */
 }
+
+.dummy-card {
+  border: 5px solid green; /* Green border */
+  padding: 10px 20px; /* Add padding for spacing */
+  background-color: #f0f0f0; /* Light gray background */
+}
