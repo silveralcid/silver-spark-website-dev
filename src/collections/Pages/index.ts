@@ -32,11 +32,7 @@ import { OurProcessBlock } from '@/blocks/OurProcessBlock/config'
 import { StepsGuideDetailedBlock } from '@/blocks/StepsGuideDetailedBlock/config'
 import { TripleCardComboBlock } from '@/blocks/TripleCardComboBlock/config'
 import { CtaBannerBlock } from '@/blocks/CtaBannerBlock/config'
-// import { CaseStudiesBlock } from '@/blocks/CaseStudiesBlock/config'
-// import { PricingMilestoneBlock } from '@/blocks/PricingMilestoneBlock/config'
-// import { StepsGuideDetailedBlock } from '@/blocks/StepsGuideDetailedBlock/config'
-// import { OurServicesBlock } from '@/blocks/OurServicesBlock/config'
-// import { TripleCardComboBlock } from '@/blocks/TripleCardComboBlock/config'
+import { CaseStudiesBlock } from '@/blocks/CaseStudiesBlock/config'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -109,7 +105,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 StepsGuideDetailedBlock,
                 TripleCardComboBlock,
                 CtaBannerBlock,
-                // CaseStudiesBlock,
+                CaseStudiesBlock,
               ],
               required: true,
               admin: {

@@ -1,7 +1,5 @@
 import type { Block } from 'payload'
 
-//double check the this, could be wrong
-
 export const CaseStudiesBlock: Block = {
   slug: 'caseStudiesBlock',
   interfaceName: 'CaseStudiesBlock',
@@ -15,11 +13,15 @@ export const CaseStudiesBlock: Block = {
       type: 'richText',
     },
     {
-      name: 'ctaText',
+      name: 'ctaButtonText',
       type: 'text',
     },
     {
-      name: 'ctaLink',
+      name: 'ctaButtonLink',
+      type: 'text',
+    },
+    {
+      name: 'viewButtonText',
       type: 'text',
     },
     {
@@ -27,172 +29,80 @@ export const CaseStudiesBlock: Block = {
       type: 'array',
       fields: [
         {
-          name: 'compName',
+          name: 'companyName',
           type: 'text',
         },
         {
-          name: 'compInd',
+          name: 'companyIndustry',
           type: 'text',
         },
         {
-          name: 'compLogo',
+          name: 'companyLogo',
           type: 'upload',
           relationTo: 'media',
         },
         {
-          name: 'viewText',
+          name: 'viewButtonLink',
           type: 'text',
         },
         {
-          name: 'viewLink',
-          type: 'text',
-        },
-        {
-          name: 'ovTitle',
-          type: 'text',
-        },
-        {
-          name: 'ovDesc',
-          type: 'richText',
-        },
-        {
-          name: 'sampImg',
+          name: 'image',
           type: 'upload',
           relationTo: 'media',
         },
         {
-          name: 'ovResults',
+          name: 'resultNumber1',
+          type: 'text',
+        },
+        {
+          name: 'resultInfo1',
+          type: 'text',
+        },
+        {
+          name: 'resultNumber2',
+          type: 'text',
+        },
+        {
+          name: 'resultInfo2',
+          type: 'text',
+        },
+        {
+          name: 'itemListATitle',
+          type: 'text',
+        },
+        {
+          name: 'itemListA',
           type: 'array',
           fields: [
             {
-              name: 'ovResNum',
+              name: 'item',
               type: 'text',
             },
             {
-              name: 'ovResInfo',
-              type: 'text',
+              name: 'icon',
+              type: 'upload',
+              relationTo: 'media',
             },
           ],
         },
         {
-          name: 'ovSolText',
+          name: 'itemListBTitle',
           type: 'text',
         },
         {
-          name: 'ovSols',
+          name: 'itemListB',
           type: 'array',
           fields: [
             {
-              name: 'ovSol',
+              name: 'item',
               type: 'text',
             },
             {
-              name: 'ovSolInfo',
-              type: 'text',
+              name: 'icon',
+              type: 'upload',
+              relationTo: 'media',
             },
           ],
-        },
-        {
-          name: 'ovPainText',
-          type: 'text',
-        },
-        {
-          name: 'ovPains',
-          type: 'array',
-          fields: [
-            {
-              name: 'ovPain',
-              type: 'text',
-            },
-            {
-              name: 'ovPainInfo',
-              type: 'text',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'chalTitle',
-      type: 'text',
-    },
-    {
-      name: 'chalDesc',
-      type: 'richText',
-    },
-    {
-      name: 'chalCards',
-      type: 'array',
-      fields: [
-        {
-          name: 'chalCardTitle',
-          type: 'text',
-        },
-        {
-          name: 'chalCardPts',
-          type: 'array',
-          fields: [
-            {
-              name: 'chalCardPt',
-              type: 'text',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'solTitle',
-      type: 'text',
-    },
-    {
-      name: 'solDesc',
-      type: 'richText',
-    },
-    {
-      name: 'solCards',
-      type: 'array',
-      fields: [
-        {
-          name: 'solCardTitle',
-          type: 'text',
-        },
-        {
-          name: 'solCardDesc',
-          type: 'text',
-        },
-      ],
-    },
-    {
-      name: 'resTitle',
-      type: 'text',
-    },
-    {
-      name: 'resDesc',
-      type: 'richText',
-    },
-    {
-      name: 'resCards',
-      type: 'array',
-      fields: [
-        { name: 'resNum', type: 'text' },
-        { name: 'resTitle', type: 'text' },
-        {
-          name: 'resDesc',
-          type: 'richText',
-        },
-      ],
-    },
-    {
-      name: 'resKeyPts',
-      type: 'array',
-      fields: [
-        {
-          name: 'resKeyPt',
-          type: 'text',
-        },
-        {
-          name: 'resKeyPtDesc',
-          type: 'richText',
         },
       ],
     },

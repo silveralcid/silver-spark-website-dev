@@ -208,6 +208,7 @@ export interface Page {
     | StepsGuideDetailedBlock
     | TripleCardComboBlock
     | CtaBannerBlock
+    | CaseStudiesBlock
   )[];
   meta?: {
     title?: string | null;
@@ -1319,6 +1320,64 @@ export interface CtaBannerBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CaseStudiesBlock".
+ */
+export interface CaseStudiesBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  ctaButtonText?: string | null;
+  ctaButtonLink?: string | null;
+  viewButtonText?: string | null;
+  caseCards?:
+    | {
+        companyName?: string | null;
+        companyIndustry?: string | null;
+        companyLogo?: (number | null) | Media;
+        viewButtonLink?: string | null;
+        image?: (number | null) | Media;
+        resultNumber1?: string | null;
+        resultInfo1?: string | null;
+        resultNumber2?: string | null;
+        resultInfo2?: string | null;
+        itemListATitle?: string | null;
+        itemListA?:
+          | {
+              item?: string | null;
+              icon?: (number | null) | Media;
+              id?: string | null;
+            }[]
+          | null;
+        itemListBTitle?: string | null;
+        itemListB?:
+          | {
+              item?: string | null;
+              icon?: (number | null) | Media;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'caseStudiesBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1618,6 +1677,7 @@ export interface PagesSelect<T extends boolean = true> {
         stepsGuideDetailed?: T | StepsGuideDetailedBlockSelect<T>;
         tripleCardCombo?: T | TripleCardComboBlockSelect<T>;
         ctaBanner?: T | CtaBannerBlockSelect<T>;
+        caseStudiesBlock?: T | CaseStudiesBlockSelect<T>;
       };
   meta?:
     | T
@@ -1968,6 +2028,49 @@ export interface CtaBannerBlockSelect<T extends boolean = true> {
   image?: T;
   calloutText1?: T;
   calloutText2?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CaseStudiesBlock_select".
+ */
+export interface CaseStudiesBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  ctaButtonText?: T;
+  ctaButtonLink?: T;
+  viewButtonText?: T;
+  caseCards?:
+    | T
+    | {
+        companyName?: T;
+        companyIndustry?: T;
+        companyLogo?: T;
+        viewButtonLink?: T;
+        image?: T;
+        resultNumber1?: T;
+        resultInfo1?: T;
+        resultNumber2?: T;
+        resultInfo2?: T;
+        itemListATitle?: T;
+        itemListA?:
+          | T
+          | {
+              item?: T;
+              icon?: T;
+              id?: T;
+            };
+        itemListBTitle?: T;
+        itemListB?:
+          | T
+          | {
+              item?: T;
+              icon?: T;
+              id?: T;
+            };
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }
