@@ -16,6 +16,7 @@ import { OurServicesBlock } from '@/blocks/OurServicesBlock/Component'
 import { TestimonialSliderBlock } from '@/blocks/TestimonialSliderBlock/Component'
 import { OurTechBlock } from '@/blocks/OurTechBlock/Component'
 import { OurProcessBlock } from '@/blocks/OurProcessBlock/Component'
+import { PricingMilestoneBlock } from './PricingMilestoneBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -30,6 +31,7 @@ const blockComponents = {
   testimonialSlider: TestimonialSliderBlock,
   ourTech: OurTechBlock,
   ourProcess: OurProcessBlock,
+  pricingMilestone: PricingMilestoneBlock,
 }
 
 export const RenderBlocks: React.FC<{
