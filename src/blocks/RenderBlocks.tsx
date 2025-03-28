@@ -15,6 +15,7 @@ import { AboutUsBlock } from '@/blocks/AboutUsBlock/Component'
 import { OurServicesBlock } from '@/blocks/OurServicesBlock/Component'
 import { TestimonialSliderBlock } from '@/blocks/TestimonialSliderBlock/Component'
 import { OurTechBlock } from '@/blocks/OurTechBlock/Component'
+import { OurProcessBlock } from '@/blocks/OurProcessBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -28,6 +29,7 @@ const blockComponents = {
   ourServices: OurServicesBlock,
   testimonialSlider: TestimonialSliderBlock,
   ourTech: OurTechBlock,
+  ourProcess: OurProcessBlock,
 }
 
 export const RenderBlocks: React.FC<{
