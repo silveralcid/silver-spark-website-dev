@@ -14,6 +14,7 @@ import { FeatureSpreadBlock } from '@/blocks/FeatureSpreadBlock/Component'
 import { AboutUsBlock } from '@/blocks/AboutUsBlock/Component'
 import { OurServicesBlock } from '@/blocks/OurServicesBlock/Component'
 import { TestimonialSliderBlock } from '@/blocks/TestimonialSliderBlock/Component'
+import { OurTechBlock } from '@/blocks/OurTechBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,

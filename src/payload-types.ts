@@ -202,6 +202,7 @@ export interface Page {
     | AboutUsBlock
     | OurServicesBlock
     | TestimonialSliderBlock
+    | OurTechBlock
   )[];
   meta?: {
     title?: string | null;
@@ -962,6 +963,62 @@ export interface TestimonialSliderBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OurTechBlock".
+ */
+export interface OurTechBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  categoryType?: string | null;
+  categoryCards?:
+    | {
+        cardTitle?: string | null;
+        cardDescription?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        chipSectionName?: string | null;
+        cardChips?:
+          | {
+              cardItem?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaButtonText?: string | null;
+  ctaButtonLink?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'ourTech';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1255,6 +1312,7 @@ export interface PagesSelect<T extends boolean = true> {
         aboutUs?: T | AboutUsBlockSelect<T>;
         ourServices?: T | OurServicesBlockSelect<T>;
         testimonialSlider?: T | TestimonialSliderBlockSelect<T>;
+        ourTech?: T | OurTechBlockSelect<T>;
       };
   meta?:
     | T
@@ -1452,6 +1510,33 @@ export interface TestimonialSliderBlockSelect<T extends boolean = true> {
         companyName?: T;
         role?: T;
         testimonialText?: T;
+        id?: T;
+      };
+  ctaButtonText?: T;
+  ctaButtonLink?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OurTechBlock_select".
+ */
+export interface OurTechBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  categoryType?: T;
+  categoryCards?:
+    | T
+    | {
+        cardTitle?: T;
+        cardDescription?: T;
+        chipSectionName?: T;
+        cardChips?:
+          | T
+          | {
+              cardItem?: T;
+              id?: T;
+            };
         id?: T;
       };
   ctaButtonText?: T;
