@@ -1,0 +1,280 @@
+/* Loading screen animations */
+@keyframes burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+@keyframes spark {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(var(--angle)) translateY(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(var(--angle)) translateY(var(--distance));
+    opacity: 0;
+  }
+}
+
+/* Shimmer animation for gradient lines */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+}
+
+/* Custom property for gradient animation rotation angle */
+@property --a {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* Keyframes for the rotating gradient animation */
+@keyframes rotating {
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
+  }
+}
+
+/* Video banner gradient border styles */
+.video-banner-container {
+  position: relative;
+}
+
+.video-banner-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  background: conic-gradient(
+    from var(--a),
+    #c2410c /* orange-700 */,
+    #ea580c /* orange-600 */,
+    #f97316 /* orange-500 */,
+    #d97706 /* amber-600 */,
+    #f59e0b /* amber-500 */,
+    #c2410c /* back to orange-700 */
+  );
+  animation: rotating 4s linear infinite;
+  z-index: 0;
+}
+
+.video-banner-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  background: conic-gradient(
+    from var(--a),
+    #c2410c /* orange-700 */,
+    #ea580c /* orange-600 */,
+    #f97316 /* orange-500 */,
+    #d97706 /* amber-600 */,
+    #f59e0b /* amber-500 */,
+    #c2410c /* back to orange-700 */
+  );
+  filter: blur(15px);
+  opacity: 0.6;
+  animation: rotating 4s linear infinite;
+  z-index: 0;
+}
+
+.video-banner-content {
+  position: absolute;
+  inset: 2px; /* Border thickness */
+  border-radius: calc(var(--radius) - 2px);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Service card gradient animation */
+.service-card-gradient {
+  background: conic-gradient(
+    from var(--a),
+    #c2410c /* orange-700 */,
+    #ea580c /* orange-600 */,
+    #f97316 /* orange-500 */,
+    #d97706 /* amber-600 */,
+    #f59e0b /* amber-500 */,
+    #c2410c /* back to orange-700 */
+  );
+  animation: rotating 4s linear infinite;
+}
+
+/* Smooth orange gradient for testimonial cards */
+.smooth-orange-gradient {
+  background: linear-gradient(to bottom, #f97316, #f59e0b);
+  z-index: 1;
+}
+
+.service-card-hovered {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+.burst-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 165, 0, 0.7) 50%,
+    rgba(255, 165, 0, 0) 70%
+  );
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+.animate-burst {
+  animation: burst 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.delay-150 {
+  animation-delay: 0.15s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-450 {
+  animation-delay: 0.45s;
+}
+
+.sparks-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+}
+
+.spark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: linear-gradient(to right, #f97316, #f59e0b);
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+  transform: translate(-50%, -50%) scale(0) rotate(var(--angle)) translateY(0);
+  opacity: 0;
+  animation-delay: var(--delay);
+}
+
+.animate-spark {
+  animation: spark 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: var(--min-opacity, 0.5);
+    transform: scale(1) translate(0, 0);
+    filter: blur(10px);
+  }
+  33% {
+    transform: scale(1.2) translate(3px, -3px);
+    filter: blur(12px);
+  }
+  66% {
+    transform: scale(0.95) translate(-3px, 3px);
+    filter: blur(15px);
+  }
+  50% {
+    opacity: var(--max-opacity, 0.8);
+    filter: blur(18px);
+  }
+}
+
+/* Line clamp for text */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-none {
+  -webkit-line-clamp: unset;
+  display: block;
+}
+
+/* Prevent text selection */
+.select-none {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Cursor styles */
+.cursor-grab {
+  cursor: grab;
+}
+
+.active\:cursor-grabbing:active {
+  cursor: grabbing;
+}
+
+/* Testimonial card active state with glowing border */
+.testimonial-card-active {
+  position: relative;
+}
+
+.testimonial-card-active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #f97316, #f59e0b);
+  z-index: 1;
+}
+
+.testimonial-card-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #f97316, #f59e0b);
+  filter: blur(8px);
+  opacity: 0.7;
+  z-index: 0;
+}
