@@ -207,6 +207,7 @@ export interface Page {
     | PricingMilestoneBlock
     | StepsGuideDetailedBlock
     | TripleCardComboBlock
+    | CtaBannerBlock
   )[];
   meta?: {
     title?: string | null;
@@ -1272,6 +1273,52 @@ export interface TripleCardComboBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CtaBannerBlock".
+ */
+export interface CtaBannerBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  contentText?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  ctaButtonText?: string | null;
+  ctaButtonLink?: string | null;
+  icon?: (number | null) | Media;
+  image?: (number | null) | Media;
+  calloutText1?: string | null;
+  calloutText2?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'ctaBanner';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1570,6 +1617,7 @@ export interface PagesSelect<T extends boolean = true> {
         pricingMilestone?: T | PricingMilestoneBlockSelect<T>;
         stepsGuideDetailed?: T | StepsGuideDetailedBlockSelect<T>;
         tripleCardCombo?: T | TripleCardComboBlockSelect<T>;
+        ctaBanner?: T | CtaBannerBlockSelect<T>;
       };
   meta?:
     | T
@@ -1903,6 +1951,23 @@ export interface TripleCardComboBlockSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CtaBannerBlock_select".
+ */
+export interface CtaBannerBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  contentText?: T;
+  ctaButtonText?: T;
+  ctaButtonLink?: T;
+  icon?: T;
+  image?: T;
+  calloutText1?: T;
+  calloutText2?: T;
   id?: T;
   blockName?: T;
 }

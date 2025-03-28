@@ -16,9 +16,10 @@ import { OurServicesBlock } from '@/blocks/OurServicesBlock/Component'
 import { TestimonialSliderBlock } from '@/blocks/TestimonialSliderBlock/Component'
 import { OurTechBlock } from '@/blocks/OurTechBlock/Component'
 import { OurProcessBlock } from '@/blocks/OurProcessBlock/Component'
-import { PricingMilestoneBlock } from './PricingMilestoneBlock/Component'
-import { StepsGuideDetailed } from './StepsGuideDetailedBlock/Component'
-import { TripleCardComboBlock } from './TripleCardComboBlock/Component'
+import { PricingMilestoneBlock } from '@/blocks/PricingMilestoneBlock/Component'
+import { StepsGuideDetailed } from '@/blocks/StepsGuideDetailedBlock/Component'
+import { TripleCardComboBlock } from '@/blocks/TripleCardComboBlock/Component'
+import { CtaBanner } from '@/blocks/CtaBannerBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -36,6 +37,7 @@ const blockComponents = {
   pricingMilestone: PricingMilestoneBlock,
   stepsGuideDetailed: StepsGuideDetailed,
   tripleCardCombo: TripleCardComboBlock,
+  ctaBanner: CtaBanner,
 }
 
 export const RenderBlocks: React.FC<{

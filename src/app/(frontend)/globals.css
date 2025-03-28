@@ -555,6 +555,7 @@ html[data-theme='light'] {
   border: 3px solid green; /* Green border */
   padding: 10px 20px; /* Add padding for spacing */
   background-color: #f0f0f0; /* Light gray background */
+  margin: 0.5rem;
 }
 
 .dummy-button {
@@ -563,6 +564,7 @@ html[data-theme='light'] {
   border-radius: 10px; /* Add rounded corners */
   background-color: #f0f0f0; /* Light gray background */
   color: #333; /* Dark text color */
+  margin: 0.25rem;
 }
 
 .dummy-text-heading {
