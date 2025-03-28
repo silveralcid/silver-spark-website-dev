@@ -201,6 +201,7 @@ export interface Page {
     | FeatureSpreadBlock
     | AboutUsBlock
     | OurServicesBlock
+    | TestimonialSliderBlock
   )[];
   meta?: {
     title?: string | null;
@@ -923,6 +924,44 @@ export interface OurServicesBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TestimonialSliderBlock".
+ */
+export interface TestimonialSliderBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  testimonialCards?:
+    | {
+        image?: (number | null) | Media;
+        firstName?: string | null;
+        lastName?: string | null;
+        companyName?: string | null;
+        role?: string | null;
+        testimonialText?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  ctaButtonText?: string | null;
+  ctaButtonLink?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'testimonialSlider';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1215,6 +1254,7 @@ export interface PagesSelect<T extends boolean = true> {
         featureSpread?: T | FeatureSpreadBlockSelect<T>;
         aboutUs?: T | AboutUsBlockSelect<T>;
         ourServices?: T | OurServicesBlockSelect<T>;
+        testimonialSlider?: T | TestimonialSliderBlockSelect<T>;
       };
   meta?:
     | T
@@ -1389,6 +1429,29 @@ export interface OurServicesBlockSelect<T extends boolean = true> {
               servicePoint?: T;
               id?: T;
             };
+        id?: T;
+      };
+  ctaButtonText?: T;
+  ctaButtonLink?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TestimonialSliderBlock_select".
+ */
+export interface TestimonialSliderBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  testimonialCards?:
+    | T
+    | {
+        image?: T;
+        firstName?: T;
+        lastName?: T;
+        companyName?: T;
+        role?: T;
+        testimonialText?: T;
         id?: T;
       };
   ctaButtonText?: T;

@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 
 import type { Page } from '@/payload-types'
 
+import '@/app/(frontend)/globals.css'
+
 import { ArchiveBlock } from '@/blocks/ArchiveBlock/Component'
 import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { ContentBlock } from '@/blocks/Content/Component'
@@ -11,8 +13,7 @@ import { FaqBlock } from '@/blocks/FaqBlock/Component'
 import { FeatureSpreadBlock } from '@/blocks/FeatureSpreadBlock/Component'
 import { AboutUsBlock } from '@/blocks/AboutUsBlock/Component'
 import { OurServicesBlock } from '@/blocks/OurServicesBlock/Component'
-
-import '@/app/(frontend)/globals.css'
+import { TestimonialSliderBlock } from '@/blocks/TestimonialSliderBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -24,6 +25,7 @@ const blockComponents = {
   featureSpread: FeatureSpreadBlock,
   aboutUs: AboutUsBlock,
   ourServices: OurServicesBlock,
+  testimonialSlider: TestimonialSliderBlock,
 }
 
 export const RenderBlocks: React.FC<{

@@ -25,6 +25,7 @@ import { FaqBlock } from '@/blocks/FaqBlock/config'
 import { FeatureSpreadBlock } from '@/blocks/FeatureSpreadBlock/config'
 import { AboutUsBlock } from '@/blocks/AboutUsBlock/config'
 import { OurServicesBlock } from '@/blocks/OurServicesBlock/config'
+import { TestimonialSliderBlock } from '@/blocks/TestimonialSliderBlock/config'
 // import { CaseStudiesBlock } from '@/blocks/CaseStudiesBlock/config'
 // import { PricingMilestoneBlock } from '@/blocks/PricingMilestoneBlock/config'
 // import { OurTechBlock } from '@/blocks/OurTechBlock/config'
@@ -97,6 +98,7 @@ export const Pages: CollectionConfig<'pages'> = {
                 FeatureSpreadBlock,
                 AboutUsBlock,
                 OurServicesBlock,
+                TestimonialSliderBlock,
                 // CaseStudiesBlock,
                 // OurProcessBlock,
                 // OurTechBlock,
