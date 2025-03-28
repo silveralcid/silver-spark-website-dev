@@ -9,6 +9,7 @@ import { FormBlock } from '@/blocks/Form/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { FaqBlock } from '@/blocks/FaqBlock/Component'
 import { FeatureSpreadBlock } from '@/blocks/FeatureSpreadBlock/Component'
+import { AboutUsBlock } from '@/blocks/AboutUsBlock/Component'
 
 import '@/app/(frontend)/globals.css'
 
@@ -20,6 +21,7 @@ const blockComponents = {
   mediaBlock: MediaBlock,
   faq: FaqBlock,
   featureSpread: FeatureSpreadBlock,
+  aboutUs: AboutUsBlock,
 }
 
 export const RenderBlocks: React.FC<{

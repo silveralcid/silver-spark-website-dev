@@ -1,25 +1,48 @@
 import React from 'react'
 import type { Block } from 'payload'
-import type { AboutUsBlock as AboutUsBlockType } from './config'
+import type { AboutUsBlock as AboutUsBlockProps } from '@/payload-types'
+import RichText from '@/components/RichText'
+import Image from 'next/image'
 
-
-
-const AboutUsBlock: React.FC<AboutUsBlockProps> = ({ data }) => {
+export const AboutUsBlock: React.FC<AboutUsBlockProps> = ({
+  heading,
+  subheading,
+  image,
+  content,
+  ctaButtonText,
+  ctaButtonLink,
+  solutionHighlights,
+}) => {
   return (
-    <div className="about-us-block">
-      <h1>{data.heading}</h1>
-      <h2>{data.subheading}</h2>
-      {data.image && <img src={data.image} alt="About Us" />}
-      <div className="content">{data.content}</div>
-      {data.ctaButtonText && data.ctaButtonLink && (
-        <a href={data.ctaButtonLink} className="cta-button">
-          {data.ctaButtonText}
+    <div className="about-us-block flex flex-col items-center justify-center">
+      <h1>{heading}</h1>
+      <h2>{subheading}</h2>
+      {image && typeof image === 'object' && image.url && (
+        <Image
+          src={image.url}
+          alt={image.alt || 'Image description'}
+          width={400}
+          height={300}
+          priority
+        />
+      )}
+      {content && (
+        <RichText
+          className="body-large opacity-80 max-w-3xl mx-auto text-primary"
+          data={content}
+          enableGutter={false}
+        />
+      )}
+      {ctaButtonText && ctaButtonLink && (
+        <a href={ctaButtonLink} className="cta-button">
+          {ctaButtonText}
         </a>
       )}
       <ul className="solution-highlights">
-        {data.solutionHighlights.map((highlight: { solutionHighlight: string }, index: number) => (
-          <li key={index}>{highlight.solutionHighlight}</li>
-        ))}
+        {solutionHighlights &&
+          solutionHighlights.map((highlight, index) => (
+            <li key={index}>{highlight.solutionHighlight}</li>
+          ))}
       </ul>
     </div>
   )

@@ -24,13 +24,13 @@ import {
 import { FaqBlock } from '@/blocks/FaqBlock/config'
 import { FeatureSpreadBlock } from '@/blocks/FeatureSpreadBlock/config'
 import { AboutUsBlock } from '@/blocks/AboutUsBlock/config'
-import { CaseStudiesBlock } from '@/blocks/CaseStudiesBlock/config'
-import { PricingMilestoneBlock } from '@/blocks/PricingMilestoneBlock/config'
-import { OurTechBlock } from '@/blocks/OurTechBlock/config'
-import { StepsGuideDetailedBlock } from '@/blocks/StepsGuideDetailedBlock/config'
-import { OurProcessBlock } from '@/blocks/OurProcessBlock/config'
-import { OurServicesBlock } from '@/blocks/OurServicesBlock/config'
-import { TripleCardComboBlock } from '@/blocks/TripleCardComboBlock/config'
+// import { CaseStudiesBlock } from '@/blocks/CaseStudiesBlock/config'
+// import { PricingMilestoneBlock } from '@/blocks/PricingMilestoneBlock/config'
+// import { OurTechBlock } from '@/blocks/OurTechBlock/config'
+// import { StepsGuideDetailedBlock } from '@/blocks/StepsGuideDetailedBlock/config'
+// import { OurProcessBlock } from '@/blocks/OurProcessBlock/config'
+// import { OurServicesBlock } from '@/blocks/OurServicesBlock/config'
+// import { TripleCardComboBlock } from '@/blocks/TripleCardComboBlock/config'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -95,13 +95,13 @@ export const Pages: CollectionConfig<'pages'> = {
                 FaqBlock,
                 FeatureSpreadBlock,
                 AboutUsBlock,
-                CaseStudiesBlock,
-                OurProcessBlock,
-                OurServicesBlock,
-                OurTechBlock,
-                PricingMilestoneBlock,
-                StepsGuideDetailedBlock,
-                TripleCardComboBlock,
+                // CaseStudiesBlock,
+                // OurProcessBlock,
+                // OurServicesBlock,
+                // OurTechBlock,
+                // PricingMilestoneBlock,
+                // StepsGuideDetailedBlock,
+                // TripleCardComboBlock,
               ],
               required: true,
               admin: {
