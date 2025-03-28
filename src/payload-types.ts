@@ -869,6 +869,12 @@ export interface AboutUsBlock {
         id?: string | null;
       }[]
     | null;
+  styledWords?:
+    | {
+        word?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'aboutUs';
@@ -1842,6 +1848,12 @@ export interface AboutUsBlockSelect<T extends boolean = true> {
     | T
     | {
         solutionHighlight?: T;
+        id?: T;
+      };
+  styledWords?:
+    | T
+    | {
+        word?: T;
         id?: T;
       };
   id?: T;

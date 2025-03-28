@@ -12,10 +12,25 @@ export const AboutUsBlock: React.FC<AboutUsBlockProps> = ({
   ctaButtonText,
   ctaButtonLink,
   solutionHighlights,
+  styledWords,
 }) => {
+  // Function to highlight styled words in red
+  const highlightStyledWords = (text: string) => {
+    if (!styledWords) return text
+    let highlightedText = text
+    styledWords.forEach(({ word }) => {
+      const regex = new RegExp(`(${word})`, 'gi')
+      highlightedText = highlightedText.replace(regex, '<span style="color: red;">$1</span>')
+    })
+    return highlightedText
+  }
+
   return (
     <div className="dummy-section">
-      <h1 className="dummy-text-heading">{heading}</h1>
+      <h1
+        className="dummy-text-heading"
+        dangerouslySetInnerHTML={{ __html: highlightStyledWords(heading || '') }}
+      />
       <h2 className="dummy-text-subheading">{subheading}</h2>
       {image && typeof image === 'object' && image.url && (
         <Image

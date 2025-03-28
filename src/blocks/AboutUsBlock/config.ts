@@ -39,5 +39,15 @@ export const AboutUsBlock: Block = {
         },
       ],
     },
+    {
+      name: 'styledWords',
+      type: 'array',
+      fields: [
+        {
+          name: 'word',
+          type: 'text',
+        },
+      ],
+    },
   ],
 }
