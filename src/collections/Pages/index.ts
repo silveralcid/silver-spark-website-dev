@@ -24,6 +24,7 @@ import {
 import { FaqBlock } from '@/blocks/FaqBlock/config'
 import { FeatureSpreadBlock } from '@/blocks/FeatureSpreadBlock/config'
 import { AboutUsBlock } from '@/blocks/AboutUsBlock/config'
+import { PricingMilestoneBlock } from '@/blocks/PricingMilestoneBlock/config'
 import { OurServicesBlock } from '@/blocks/OurServicesBlock/config'
 import { TestimonialSliderBlock } from '@/blocks/TestimonialSliderBlock/config'
 import { OurTechBlock } from '@/blocks/OurTechBlock/config'
@@ -101,8 +102,8 @@ export const Pages: CollectionConfig<'pages'> = {
                 TestimonialSliderBlock,
                 OurTechBlock,
                 OurProcessBlock,
+                PricingMilestoneBlock,
                 // CaseStudiesBlock,
-                // PricingMilestoneBlock,
                 // StepsGuideDetailedBlock,
                 // TripleCardComboBlock,
               ],

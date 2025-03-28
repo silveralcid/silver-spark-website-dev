@@ -13,12 +13,33 @@ export const PricingMilestoneBlock: Block = {
       type: 'richText',
     },
     {
+      name: 'inactiveButtonText',
+      type: 'text',
+    },
+    {
+      name: 'activeButtonText1',
+      type: 'text',
+    },
+    {
+      name: 'activeButtonLink1',
+      type: 'text',
+    },
+    {
+      name: 'activeButtonText2',
+      type: 'text',
+    },
+    {
+      name: 'activeButtonLink2',
+      type: 'text',
+    },
+    {
       name: 'packagePricing',
       type: 'array',
       fields: [
         {
           name: 'icon',
-          type: 'text',
+          type: 'upload',
+          relationTo: 'media',
         },
         {
           name: 'packageName',
@@ -31,26 +52,6 @@ export const PricingMilestoneBlock: Block = {
         {
           name: 'packageDescription',
           type: 'richText',
-        },
-        {
-          name: 'inactiveButtonText',
-          type: 'text',
-        },
-        {
-          name: 'activeButtonText1',
-          type: 'text',
-        },
-        {
-          name: 'activeButtonLink1',
-          type: 'text',
-        },
-        {
-          name: 'activeButtonText2',
-          type: 'text',
-        },
-        {
-          name: 'activeButtonLink2',
-          type: 'text',
         },
         {
           name: 'packageHighlight',
@@ -81,14 +82,6 @@ export const PricingMilestoneBlock: Block = {
         {
           name: 'milestoneDescription',
           type: 'richText',
-        },
-        {
-          name: 'milestonePrice',
-          type: 'text',
-        },
-        {
-          name: 'milestonePercentage',
-          type: 'text',
         },
       ],
     },

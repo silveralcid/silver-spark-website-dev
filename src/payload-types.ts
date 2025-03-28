@@ -204,6 +204,7 @@ export interface Page {
     | TestimonialSliderBlock
     | OurTechBlock
     | OurProcessBlock
+    | PricingMilestoneBlock
   )[];
   meta?: {
     title?: string | null;
@@ -1073,6 +1074,98 @@ export interface OurProcessBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PricingMilestoneBlock".
+ */
+export interface PricingMilestoneBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  inactiveButtonText?: string | null;
+  activeButtonText1?: string | null;
+  activeButtonLink1?: string | null;
+  activeButtonText2?: string | null;
+  activeButtonLink2?: string | null;
+  packagePricing?:
+    | {
+        icon?: (number | null) | Media;
+        packageName?: string | null;
+        packagePrice?: string | null;
+        packageDescription?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        packageHighlight?: boolean | null;
+        packageHighlightText?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  milestoneSectionTitle?: string | null;
+  milestoneSectionDescription?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  milestones?:
+    | {
+        milestoneTitle?: string | null;
+        milestoneDescription?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'pricingMilestone';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1368,6 +1461,7 @@ export interface PagesSelect<T extends boolean = true> {
         testimonialSlider?: T | TestimonialSliderBlockSelect<T>;
         ourTech?: T | OurTechBlockSelect<T>;
         ourProcess?: T | OurProcessBlockSelect<T>;
+        pricingMilestone?: T | PricingMilestoneBlockSelect<T>;
       };
   meta?:
     | T
@@ -1618,6 +1712,41 @@ export interface OurProcessBlockSelect<T extends boolean = true> {
               processItem?: T;
               id?: T;
             };
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PricingMilestoneBlock_select".
+ */
+export interface PricingMilestoneBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  inactiveButtonText?: T;
+  activeButtonText1?: T;
+  activeButtonLink1?: T;
+  activeButtonText2?: T;
+  activeButtonLink2?: T;
+  packagePricing?:
+    | T
+    | {
+        icon?: T;
+        packageName?: T;
+        packagePrice?: T;
+        packageDescription?: T;
+        packageHighlight?: T;
+        packageHighlightText?: T;
+        id?: T;
+      };
+  milestoneSectionTitle?: T;
+  milestoneSectionDescription?: T;
+  milestones?:
+    | T
+    | {
+        milestoneTitle?: T;
+        milestoneDescription?: T;
         id?: T;
       };
   id?: T;
