@@ -203,6 +203,7 @@ export interface Page {
     | OurServicesBlock
     | TestimonialSliderBlock
     | OurTechBlock
+    | OurProcessBlock
   )[];
   meta?: {
     title?: string | null;
@@ -1019,6 +1020,59 @@ export interface OurTechBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OurProcessBlock".
+ */
+export interface OurProcessBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  stepType?: string | null;
+  processSteps?:
+    | {
+        stepTitle?: string | null;
+        stepDescription?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        processItems?:
+          | {
+              processItem?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'ourProcess';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1313,6 +1367,7 @@ export interface PagesSelect<T extends boolean = true> {
         ourServices?: T | OurServicesBlockSelect<T>;
         testimonialSlider?: T | TestimonialSliderBlockSelect<T>;
         ourTech?: T | OurTechBlockSelect<T>;
+        ourProcess?: T | OurProcessBlockSelect<T>;
       };
   meta?:
     | T
@@ -1541,6 +1596,30 @@ export interface OurTechBlockSelect<T extends boolean = true> {
       };
   ctaButtonText?: T;
   ctaButtonLink?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OurProcessBlock_select".
+ */
+export interface OurProcessBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  stepType?: T;
+  processSteps?:
+    | T
+    | {
+        stepTitle?: T;
+        stepDescription?: T;
+        processItems?:
+          | T
+          | {
+              processItem?: T;
+              id?: T;
+            };
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }
