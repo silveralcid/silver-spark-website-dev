@@ -30,6 +30,7 @@ import { TestimonialSliderBlock } from '@/blocks/TestimonialSliderBlock/config'
 import { OurTechBlock } from '@/blocks/OurTechBlock/config'
 import { OurProcessBlock } from '@/blocks/OurProcessBlock/config'
 import { StepsGuideDetailedBlock } from '@/blocks/StepsGuideDetailedBlock/config'
+import { TripleCardComboBlock } from '@/blocks/TripleCardComboBlock/config'
 // import { CaseStudiesBlock } from '@/blocks/CaseStudiesBlock/config'
 // import { PricingMilestoneBlock } from '@/blocks/PricingMilestoneBlock/config'
 // import { StepsGuideDetailedBlock } from '@/blocks/StepsGuideDetailedBlock/config'
@@ -105,8 +106,8 @@ export const Pages: CollectionConfig<'pages'> = {
                 OurProcessBlock,
                 PricingMilestoneBlock,
                 StepsGuideDetailedBlock,
+                TripleCardComboBlock,
                 // CaseStudiesBlock,
-                // TripleCardComboBlock,
               ],
               required: true,
               admin: {

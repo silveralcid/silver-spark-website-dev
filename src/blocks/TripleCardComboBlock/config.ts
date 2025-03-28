@@ -18,7 +18,8 @@ export const TripleCardComboBlock: Block = {
       fields: [
         {
           name: 'icon',
-          type: 'text',
+          type: 'upload',
+          relationTo: 'media',
         },
         {
           name: 'title',
@@ -41,18 +42,6 @@ export const TripleCardComboBlock: Block = {
               type: 'text',
             },
           ],
-        },
-        {
-          name: 'bannerTitle',
-          type: 'text',
-        },
-        {
-          name: 'bannerDescription',
-          type: 'richText',
-        },
-        {
-          name: 'specialText',
-          type: 'text',
         },
       ],
     },

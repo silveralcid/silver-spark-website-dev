@@ -206,6 +206,7 @@ export interface Page {
     | OurProcessBlock
     | PricingMilestoneBlock
     | StepsGuideDetailedBlock
+    | TripleCardComboBlock
   )[];
   meta?: {
     title?: string | null;
@@ -1217,6 +1218,60 @@ export interface StepsGuideDetailedBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TripleCardComboBlock".
+ */
+export interface TripleCardComboBlock {
+  heading?: string | null;
+  subheading?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  cards?:
+    | {
+        icon?: (number | null) | Media;
+        title?: string | null;
+        description?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        sectionTitle?: string | null;
+        keyPoints?:
+          | {
+              item?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'tripleCardCombo';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1514,6 +1569,7 @@ export interface PagesSelect<T extends boolean = true> {
         ourProcess?: T | OurProcessBlockSelect<T>;
         pricingMilestone?: T | PricingMilestoneBlockSelect<T>;
         stepsGuideDetailed?: T | StepsGuideDetailedBlockSelect<T>;
+        tripleCardCombo?: T | TripleCardComboBlockSelect<T>;
       };
   meta?:
     | T
@@ -1822,6 +1878,31 @@ export interface StepsGuideDetailedBlockSelect<T extends boolean = true> {
       };
   ctaText?: T;
   ctaLink?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TripleCardComboBlock_select".
+ */
+export interface TripleCardComboBlockSelect<T extends boolean = true> {
+  heading?: T;
+  subheading?: T;
+  cards?:
+    | T
+    | {
+        icon?: T;
+        title?: T;
+        description?: T;
+        sectionTitle?: T;
+        keyPoints?:
+          | T
+          | {
+              item?: T;
+              id?: T;
+            };
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }
