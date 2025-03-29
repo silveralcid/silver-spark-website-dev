@@ -12,7 +12,7 @@ export const FeatureSpreadBlock: React.FC<FeatureSpreadBlockProps> = ({
   features,
 }) => {
   return (
-    <div className="py-16 secondary-background dummy-section">
+    <div className="min-h-screen secondary-background relative flex flex-col justify-center">
       <div className="flex flex-col items-center justify-center">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-2 " style={{ color: 'var(--text-secondary)' }}>
@@ -36,7 +36,7 @@ export const FeatureSpreadBlock: React.FC<FeatureSpreadBlockProps> = ({
                   className="flex flex-col p-4 rounded-lg border border-transparent hover:border-gray-200 transition-all duration-300 hover:shadow-sm hover:bg-gray-50/50 hover:translate-y-[-2px] group"
                 >
                   <div className="flex items-start mb-2 md:mb-3">
-                    <span className="bg-gradient-to-r from-orange-700 to-amber-600 bg-clip-text text-transparent text-2xl md:text-3xl font-bold mr-2 group-hover:scale-105 transition-transform duration-300">
+                    <span className="text-gradient-primary text-2xl md:text-3xl mr-2 group-hover:scale-105 transition-transform duration-300">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <h3

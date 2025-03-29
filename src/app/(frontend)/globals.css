@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  opacity: 0;
+}
+
+html[data-theme='dark'],
+html[data-theme='light'] {
+  opacity: initial;
+}
+
 @layer base {
   :root {
     --background-primary: hsl(0 0% 98%);
@@ -132,13 +141,15 @@
   color: var(--text-secondary-accent);
 }
 
-html {
-  opacity: 0;
-}
+/* Special Color Styles */
 
-html[data-theme='dark'],
-html[data-theme='light'] {
-  opacity: initial;
+.text-gradient-primary {
+  background: linear-gradient(to right, #c05621, #fbbf24); /* from-orange-700 to-amber-600 */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  transition: transform 0.3s;
 }
 
 /* Testing Styles rename to TESTING-CLASS */
