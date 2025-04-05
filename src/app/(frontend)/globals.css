@@ -218,6 +218,15 @@ html[data-theme='light'] {
   transition: transform 0.3s;
 }
 
+/* Cursor styles */
+.cursor-grab {
+  cursor: grab;
+}
+
+.active\:cursor-grabbing:active {
+  cursor: grabbing;
+}
+
 /* Testing Styles rename to TESTING-CLASS */
 
 .dummy-section {
