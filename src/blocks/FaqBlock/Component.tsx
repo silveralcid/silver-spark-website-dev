@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { ChevronLeft } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import { cn } from '@/utilities/ui'
 
 import type { FaqBlock as FaqBlockProps } from '@/payload-types'
@@ -16,13 +16,13 @@ export const FaqBlock: React.FC<FaqBlockProps> = ({ heading, subheading, faqs })
   }
 
   return (
-    <div className="py-16 background-primary">
-      <div className="flex flex-col items-center justify-center">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-primary heading-2">{heading}</h2>
+    <section className="min-h-screen py-nav bg-black flex flex-col justify-center">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="heading-2 text-white">{heading}</h2>
           {subheading && (
             <RichText
-              className="body-large opacity-80 max-w-3xl mx-auto text-primary"
+              className="body-large opacity-80 max-w-3xl mx-auto text-white"
               data={subheading}
               enableGutter={false}
             />
@@ -31,21 +31,21 @@ export const FaqBlock: React.FC<FaqBlockProps> = ({ heading, subheading, faqs })
         <div className="max-w-3xl mx-auto">
           {faqs && faqs.length > 0 ? (
             faqs.map((faq, index) => (
-              <div key={index} className="py-5 relative">
+              <div key={index} className={cn('py-5 relative', index !== faqs.length - 1 && 'mb-5')}>
                 <button
                   className="flex justify-between items-center w-full text-left"
                   onClick={() => toggleFaq(index)}
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}
                 >
-                  <h3 className="heading-4 text-primary">{faq.question}</h3>
-                  <ChevronLeft
+                  <h3 className="heading-4 text-white">{faq.question}</h3>
+                  <ChevronDown
                     className={cn(
                       'h-5 w-5 transition-transform duration-200',
-                      openIndex === index && 'transform rotate-[-90deg]',
+                      openIndex === index && 'transform rotate-180',
                     )}
                     style={{
-                      color: openIndex === index ? 'var(--primary)' : 'var(--muted-foreground)',
+                      color: openIndex === index ? '#ea580c' : '#9ca3af',
                     }}
                     aria-hidden="true"
                   />
@@ -54,19 +54,18 @@ export const FaqBlock: React.FC<FaqBlockProps> = ({ heading, subheading, faqs })
                 <div
                   id={`faq-answer-${index}`}
                   className={cn(
-                    'mt-2 body overflow-hidden transition-all duration-300',
-                    openIndex === index
-                      ? 'max-h-96 opacity-100 text-foreground'
-                      : 'max-h-0 opacity-0 text-muted-foreground',
+                    'mt-2 body text-gray-300 overflow-hidden transition-all duration-300',
+                    openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0',
                   )}
                 >
                   {faq.answer ? (
-                    <RichText data={faq.answer} enableGutter={false} />
+                    <RichText data={faq.answer} enableGutter={false} className="pb-2" />
                   ) : (
-                    <p>No answer available</p>
+                    <p className="pb-2">No answer available</p>
                   )}
                 </div>
 
+                {/* Animated gradient line divider */}
                 {index !== faqs.length - 1 && (
                   <div className="absolute bottom-0 left-0 w-full h-[1px] overflow-hidden">
                     <div
@@ -83,10 +82,10 @@ export const FaqBlock: React.FC<FaqBlockProps> = ({ heading, subheading, faqs })
               </div>
             ))
           ) : (
-            <p>No FAQs available</p>
+            <p className="text-gray-300">No FAQs available</p>
           )}
         </div>
       </div>
-    </div>
+    </section>
   )
 }

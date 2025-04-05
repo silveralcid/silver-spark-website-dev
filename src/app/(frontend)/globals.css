@@ -227,6 +227,20 @@ html[data-theme='light'] {
   cursor: grabbing;
 }
 
+/* Shimmer animation for gradient lines */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+}
+
 /* Testing Styles rename to TESTING-CLASS */
 
 .dummy-section {
