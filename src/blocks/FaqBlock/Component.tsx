@@ -19,10 +19,10 @@ export const FaqBlock: React.FC<FaqBlockProps> = ({ heading, subheading, faqs })
     <section className="min-h-screen py-nav bg-black flex flex-col justify-center">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="heading-2 text-white">{heading}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">{heading}</h2>
           {subheading && (
             <RichText
-              className="body-large opacity-80 max-w-3xl mx-auto text-white"
+              className="text-lg md:text-xl opacity-80 max-w-3xl mx-auto text-gray-300"
               data={subheading}
               enableGutter={false}
             />
@@ -38,7 +38,7 @@ export const FaqBlock: React.FC<FaqBlockProps> = ({ heading, subheading, faqs })
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}
                 >
-                  <h3 className="heading-4 text-white">{faq.question}</h3>
+                  <h3 className="text-xl md:text-2xl font-medium text-white">{faq.question}</h3>
                   <ChevronDown
                     className={cn(
                       'h-5 w-5 transition-transform duration-200',
@@ -54,14 +54,18 @@ export const FaqBlock: React.FC<FaqBlockProps> = ({ heading, subheading, faqs })
                 <div
                   id={`faq-answer-${index}`}
                   className={cn(
-                    'mt-2 body text-gray-300 overflow-hidden transition-all duration-300',
+                    'mt-4 text-base md:text-lg overflow-hidden transition-all duration-300',
                     openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0',
                   )}
                 >
                   {faq.answer ? (
-                    <RichText data={faq.answer} enableGutter={false} className="pb-2" />
+                    <RichText
+                      data={faq.answer}
+                      enableGutter={false}
+                      className="text-gray-300 leading-relaxed pb-2"
+                    />
                   ) : (
-                    <p className="pb-2">No answer available</p>
+                    <p className="text-gray-300 leading-relaxed pb-2">No answer available</p>
                   )}
                 </div>
 
