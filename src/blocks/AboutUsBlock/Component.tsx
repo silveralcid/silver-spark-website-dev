@@ -83,12 +83,12 @@ export const AboutUsBlock: React.FC<AboutUsBlockProps> = ({
   }
 
   return (
-    <section className="py-16 md:py-20 lg:py-24 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="py-16 px-32 md:py-20 lg:py-24 bg-gray-50">
+      <div className="w-full mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <div className="space-y-6 lg:pr-6">
+          <div className="space-y-5">
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-3">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-2">
                 {processTextWithStyledWords(heading || '')}
               </h1>
               {subheading && (
@@ -97,9 +97,9 @@ export const AboutUsBlock: React.FC<AboutUsBlockProps> = ({
             </div>
 
             {solutionHighlights && solutionHighlights.length > 0 && (
-              <div className="py-2 space-y-4">
+              <div className="py-1 space-y-3">
                 {solutionHighlights.map((highlight, index) => (
-                  <div key={index} className="flex items-start gap-4">
+                  <div key={index} className="flex items-start gap-3">
                     <div className="h-7 w-7 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <Check className="h-4 w-4 text-white" />
                     </div>
@@ -125,7 +125,7 @@ export const AboutUsBlock: React.FC<AboutUsBlockProps> = ({
 
             {/* CTA button with improved spacing and layout */}
             {ctaButtonText && ctaButtonLink && (
-              <div className="pt-4 pb-2">
+              <div className="pt-3 pb-1">
                 <div
                   className="relative w-full rounded-lg overflow-hidden"
                   style={{
