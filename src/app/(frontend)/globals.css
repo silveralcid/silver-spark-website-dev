@@ -62,6 +62,12 @@ html[data-theme='light'] {
     --letter-spacing-wider: 0.05em;
     --letter-spacing-widest: 0.1em;
 
+    /* Rich text spacing variables */
+    --richtext-paragraph-spacing: 1.5em;
+    --richtext-paragraph-spacing-tight: 1em;
+    --richtext-paragraph-spacing-relaxed: 2em;
+    --richtext-paragraph-spacing-loose: 2.5em;
+
     --success: hsl(196 52% 74%);
     --warning: hsl(34 89% 85%);
     --error: hsl(10 100% 86%);
@@ -146,6 +152,50 @@ html[data-theme='light'] {
 .payload-richtext b {
   color: inherit;
   font-weight: bold;
+}
+
+/* Base rich text paragraph spacing */
+.payload-richtext p {
+  margin-bottom: var(--richtext-paragraph-spacing);
+}
+
+/* Handle empty paragraphs */
+.payload-richtext p:empty {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  height: 0.5em;
+}
+
+/* Reduce spacing between consecutive paragraphs with nothing in between */
+.payload-richtext p + p {
+  margin-top: -0.5em;
+}
+
+/* Configurable spacing variants */
+.rich-text-spacing-tight .payload-richtext p {
+  margin-bottom: var(--richtext-paragraph-spacing-tight);
+}
+
+.rich-text-spacing-tight .payload-richtext p:empty {
+  height: 0.25em;
+}
+
+.rich-text-spacing-normal .payload-richtext p {
+  margin-bottom: var(--richtext-paragraph-spacing);
+}
+
+.rich-text-spacing-relaxed .payload-richtext p {
+  margin-bottom: var(--richtext-paragraph-spacing-relaxed);
+}
+
+.rich-text-spacing-loose .payload-richtext p {
+  margin-bottom: var(--richtext-paragraph-spacing-loose);
+}
+
+/* Last paragraph in container should have no bottom margin */
+.payload-richtext p:last-child {
+  margin-bottom: 0;
 }
 
 /* Higher specificity selector to override Tailwind's prose styling */

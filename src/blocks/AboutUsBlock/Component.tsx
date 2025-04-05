@@ -83,88 +83,96 @@ export const AboutUsBlock: React.FC<AboutUsBlockProps> = ({
   }
 
   return (
-    <section className="min-h-[calc(100vh-var(--nav-height))] bg-gray-50 flex items-center py-16 md:py-24">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
+    <section className="py-16 md:py-20 lg:py-24 bg-gray-50">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="space-y-6 lg:pr-6">
+            <div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-3">
                 {processTextWithStyledWords(heading || '')}
               </h1>
-              <p className="text-xl md:text-2xl font-medium text-gray-700">{subheading}</p>
+              {subheading && (
+                <p className="text-xl md:text-2xl font-medium text-gray-700 mt-3">{subheading}</p>
+              )}
             </div>
 
-            <div className="space-y-6 py-4">
-              {solutionHighlights &&
-                solutionHighlights.map((highlight, index) => (
-                  <div key={index} className="flex items-start gap-5">
-                    <div className="h-8 w-8 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <Check className="h-5 w-5 text-white" />
+            {solutionHighlights && solutionHighlights.length > 0 && (
+              <div className="py-2 space-y-4">
+                {solutionHighlights.map((highlight, index) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="h-7 w-7 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <Check className="h-4 w-4 text-white" />
                     </div>
-                    <div className="text-xl text-gray-700">
+                    <div className="text-lg text-gray-700">
                       {processTextWithStyledWords(highlight.solutionHighlight || '')}
                     </div>
                   </div>
                 ))}
-            </div>
+              </div>
+            )}
 
-            <div className="space-y-6">
-              {content && (
-                <RichText className="text-lg text-gray-700" data={content} enableGutter={false} />
-              )}
-            </div>
+            {/* Rich text content */}
+            {content && (
+              <div className="py-1">
+                <RichText
+                  className="text-lg text-gray-700"
+                  data={content}
+                  enableGutter={false}
+                  textSpacing="tight"
+                />
+              </div>
+            )}
 
+            {/* CTA button with improved spacing and layout */}
             {ctaButtonText && ctaButtonLink && (
-              <div className="relative w-full mt-8">
+              <div className="pt-4 pb-2">
                 <div
-                  className="video-banner-container relative -left-4 w-[calc(100%+1rem)] h-20"
+                  className="relative w-full rounded-lg overflow-hidden"
                   style={{
                     background:
                       'linear-gradient(90deg, rgba(194,65,12,1) 0%, rgba(217,119,6,1) 100%)',
-                    borderRadius: '8px',
                     boxShadow: '0 8px 25px -5px rgba(194,65,12,0.5)',
                   }}
                 >
-                  <div className="video-banner-content flex items-center h-full">
-                    <div className="flex items-center ml-4 h-full">
-                      <div className="relative overflow-hidden rounded-md h-16 w-28 mr-4 flex-shrink-0 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                        <Image
-                          src="/placeholder.svg?height=200&width=350"
-                          alt="Video thumbnail"
-                          fill
-                          className="object-cover"
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                          <div
-                            ref={playButtonRef}
-                            className="h-10 w-10 rounded-full bg-white flex items-center justify-center shadow-[0_0_10px_rgba(255,255,255,0.3)] transition-all duration-500"
-                          >
-                            <Play className="h-5 w-5 text-gray-900 ml-0.5" fill="currentColor" />
-                          </div>
+                  <div className="flex items-center p-3">
+                    <div className="relative overflow-hidden rounded-md h-14 w-24 mr-4 flex-shrink-0 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                      <Image
+                        src="/placeholder.svg?height=200&width=350"
+                        alt="Video thumbnail"
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                        <div
+                          ref={playButtonRef}
+                          className="h-9 w-9 rounded-full bg-white flex items-center justify-center shadow-[0_0_10px_rgba(255,255,255,0.3)] transition-all duration-500"
+                        >
+                          <Play className="h-4 w-4 text-gray-900 ml-0.5" fill="currentColor" />
                         </div>
                       </div>
-                      <div className="text-white">
-                        <div className="text-lg font-medium">{ctaButtonText}</div>
-                        <div className="text-sm opacity-80">1 MINUTE</div>
-                      </div>
+                    </div>
+                    <div className="text-white">
+                      <div className="text-base font-medium">{ctaButtonText}</div>
+                      <div className="text-xs opacity-80">1 MINUTE</div>
                     </div>
                   </div>
                 </div>
-                <div className="h-20"></div>
               </div>
             )}
           </div>
 
-          <div className="relative h-[400px] md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden shadow-2xl">
-            {image && typeof image === 'object' && image.url && (
-              <Image
-                src={image.url}
-                alt={image.alt || 'Silver Spark team'}
-                fill
-                className="object-cover"
-                priority
-              />
-            )}
+          <div className="mt-8 lg:mt-0">
+            <div className="relative w-full h-0 pb-[75%] md:pb-[85%] lg:pb-[90%] rounded-lg overflow-hidden shadow-xl">
+              {image && typeof image === 'object' && image.url && (
+                <Image
+                  src={image.url}
+                  alt={image.alt || 'Silver Spark team'}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>

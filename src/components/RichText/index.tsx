@@ -55,19 +55,32 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
   },
 })
 
+type TextSpacing = 'tight' | 'normal' | 'relaxed' | 'loose'
+
 type Props = {
   data: DefaultTypedEditorState
   enableGutter?: boolean
   enableProse?: boolean
+  textSpacing?: TextSpacing
 } & React.HTMLAttributes<HTMLDivElement>
 
 export default function RichText(props: Props) {
-  const { className, enableProse = true, enableGutter = true, ...rest } = props
+  const {
+    className,
+    enableProse = true,
+    enableGutter = true,
+    textSpacing = 'normal',
+    ...rest
+  } = props
+
+  const spacingClass = textSpacing !== 'normal' ? `rich-text-spacing-${textSpacing}` : ''
+
   return (
     <ConvertRichText
       converters={jsxConverters}
       className={cn(
         'payload-richtext rich-text-preserve-bold',
+        spacingClass,
         {
           container: enableGutter,
           'max-w-none': !enableGutter,
